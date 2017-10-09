@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<ui:composition template="/template/backOfficeTemplate.xhtml">
+	<ui:define name="head">
+		<title>#{resources.errorPage_title}</title>
+		
+	</ui:define>
+	
+	<ui:define name="main">
+		<h:form id="mainForm">
+			<h:outputText value="#{resources.errorPage_403_content}" />
+			<h:commandButton value="#{resources.errorPage_backToMain}" id="b1"
+				action="home" immediate="true" />
+		</h:form>
+	</ui:define>
+</ui:composition>
+
+</html>

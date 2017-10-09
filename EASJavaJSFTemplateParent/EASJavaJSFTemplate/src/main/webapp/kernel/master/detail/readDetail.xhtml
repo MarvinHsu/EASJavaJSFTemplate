@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:panelGroup style="display:block; text-align:left">
+	<p:commandButton id="commandButtonCreate"
+		action="#{master_DetailManagedBean.doCreateAction}"
+		value="#{resources.commandButtonCreate}"
+		rendered="#{menuManagedBean.isGrant('detail','create')}"
+		immediate="true" accesskey="c" ajax="false" />
+</h:panelGroup>
+<p />
+<p:dataTable id="dataTable" var="bo" paginator="true"
+	paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+	rows="#{defaultConfigManagedBean.rowsOfPerPage}"
+	rowsPerPageTemplate="#{defaultConfigManagedBean.rowsOfPerPage}"
+	value="#{master_DetailManagedBean.dataModel}">
+
+	<p:column id="columnId" sortBy="#{bo.id}"
+		rendered="#{defaultConfigManagedBean.devMode}"
+		headerText="#{resources.com_hsuforum_eastjavatemplate_entity_Detail_id}">
+
+		<h:outputText value="#{bo.id}"
+			rendered="#{!menuManagedBean.isGrant('detail','update')}" />
+		<h:commandLink value="#{bo.id}"
+			action="#{master_DetailManagedBean.doUpdateAction}"
+			rendered="#{menuManagedBean.isGrant('detail','update')}" />
+
+	</p:column>
+
+	<p:column id="columnName" sortBy="#{bo.name}"
+		headerText="#{resources.com_hsuforum_eastjavatemplate_entity_Detail_name}">
+
+		<h:outputLabel value="#{bo.name}" />
+	</p:column>
+
+	<p:column id="columnCode" sortBy="#{bo.code}"
+		headerText="#{resources.com_hsuforum_eastjavatemplate_entity_Detail_code}">
+
+		<h:outputLabel value="#{bo.code}" />
+	</p:column>
+
+
+</p:dataTable>
+
+</html>

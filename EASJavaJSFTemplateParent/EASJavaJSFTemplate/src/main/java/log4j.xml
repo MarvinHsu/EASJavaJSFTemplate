@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+    <appender name="STDIO" class="org.apache.log4j.ConsoleAppender">
+        <param name="encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %-5p %c{1}:%L %m %n"/>
+        </layout>
+    </appender>
+    <appender name="FILE" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="C:/Application/EASJavaTemplate/Log/EASJavaTemplate.log"/>
+        <param name="Append" value="true"/>
+        <!-- Rollover at midnight each day -->
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %-5p %c{1}:%L %m %n"/>
+        </layout>
+    </appender>
+    
+    <logger name="org.springframework.security">
+        <level value="INFO"/>
+        <appender-ref ref="STDIO"/>
+        <appender-ref ref="FILE"/>
+    </logger>
+    
+    <logger name="com.hsuforum.eas.security">
+        <level value="INFO"/>
+        <appender-ref ref="STDIO"/>
+    </logger>
+    
+    <logger name="com.hsuforum.eas">
+        <level value="INFO"/>
+        <appender-ref ref="STDIO"/>
+        <appender-ref ref="FILE"/>
+    </logger>
+    <root>
+        <level value="INFO"/>
+        <appender-ref ref="STDIO"/>
+        <appender-ref ref="FILE"/>
+    </root>
+</log4j:configuration>

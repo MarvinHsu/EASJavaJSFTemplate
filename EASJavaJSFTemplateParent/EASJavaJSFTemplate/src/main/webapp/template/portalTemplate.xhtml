@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:p="http://primefaces.org/ui"
+	lang="#{portalDefaultManagedBean.locale}">
+<h:head>
+	<ui:insert name="head"></ui:insert>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+</h:head>
+<h:body>
+	<c:choose>
+		<c:when test="#{userAgentManagedBean.phone}">
+			<h:outputStylesheet library="defaultTheme"
+				name="css/applicationMobile.css" target="head" />
+
+			<div id="page">
+				
+				<div id="page-content">
+
+					<div class="content-container">
+						<!--右側內容區Start -->
+						<ui:insert name="main">Main Content</ui:insert>
+						<!--右側內容區 end -->
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div id="footer"></div>
+				<div class="left-menu">
+					<ui:insert name="left">Left Content</ui:insert>
+				</div>
+			</div>
+		</c:when>
+		<c:otherwise>
+
+			<h:outputStylesheet library="defaultTheme" name="css/application.css"
+				target="head" />
+
+			<div id="page">
+				<div id="header">
+					<a href="/default.jsf" class="logo"><img
+						src="#{facesContext.externalContext.requestContextPath}/images/hsu-logo.png"
+						alt="hsu-logo" /> </a>
+
+					<div class="right-controls">
+						<h:form id="topForm">
+							<h:panelGrid columns="4">
+
+								<div id="google_translate_element"></div>
+								<h:selectOneMenu id="skinSelect" value="#{skinBean.skin}">
+									<c:forEach var="skin" items="#{skinBean.skins}">
+										<f:selectItem itemLabel="#{skin}" itemValue="#{skin}" />
+									</c:forEach>
+								</h:selectOneMenu>
+								<p:commandButton value="#{resources.commandButtonSelectSkin}"
+									id="btnSelectSkin" action="#{skinBean.doSelectSkin}" ajax="false"/>
+								<p:commandButton action="logout" value="#{resources.logout}" ajax="false"/>
+
+							</h:panelGrid>
+						</h:form>
+
+					</div>
+				</div>
+				<div id="page-content">
+					<div class="left-menu">
+						<ui:insert name="left">Left Content</ui:insert>
+					</div>
+					<div class="content-container">
+						<!--右側內容區Start -->
+						<ui:insert name="main">Main Content</ui:insert>
+						<!--右側內容區 end -->
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div id="footer"></div>
+			</div>
+		</c:otherwise>
+	</c:choose>
+
+</h:body>
+</html>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+	<!--  
+	<Loader
+        loaderClass="org.springframework.instrument.classloading.tomcat.TomcatInstrumentableClassLoader"/>
+	-->
+	   
+    <!-- MySQL -->
+      
+    <Resource name="jndi/EASTDS" auth="Container"
+        type="javax.sql.DataSource"
+        driverClassName="com.mysql.jdbc.Driver"
+        url="jdbc:mysql://winserver4:3306/east" username="EAST"
+        password="Fuckyou1!" maxTotal="5" maxWaitMillis="-1" />
+    
+
+</Context>

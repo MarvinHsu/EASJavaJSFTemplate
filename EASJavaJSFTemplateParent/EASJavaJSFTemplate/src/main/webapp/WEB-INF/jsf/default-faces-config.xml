@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config version="2.1" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd">
+	<!-- default managed-bean begin -->
+	<managed-bean>
+		<managed-bean-name>defaultConfigManagedBean</managed-bean-name>
+		<managed-bean-class>com.hsuforum.easjavatemplate.web.config.DefaultConfigManagedBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>systemCode</property-name>
+			<property-class>java.lang.String</property-class>
+			<value>HSUForum</value>
+		</managed-property>
+		<managed-property>
+			<property-name>devMode</property-name>
+			<property-class>java.lang.Boolean</property-class>
+			<value>true</value>
+		</managed-property>
+		<managed-property>
+			<property-name>rowsOfPerPage</property-name>
+			<property-class>java.lang.Integer</property-class>
+			<value>25</value>
+		</managed-property>
+		<managed-property>
+			<property-name>mailFrom</property-name>
+			<property-class>java.lang.String</property-class>
+			<value>weichehsu1979@gmail.com</value>
+		</managed-property>
+		<managed-property>
+			<property-name>timeZone</property-name>
+			<property-class>java.lang.String</property-class>
+			<value>Asia/Taipei</value>
+		</managed-property>
+	</managed-bean>
+	<!-- default managed-bean end default error navigation rule begin -->
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>error</from-outcome>
+			<to-view-id>/exception/exception.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/exception/exception.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>index</from-outcome>
+			<to-view-id>/default.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<application>
+		<el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
+		<resource-bundle>
+			<base-name>applicationResources</base-name>
+			<var>resources</var>
+		</resource-bundle>
+		<resource-bundle>
+			<base-name>messages</base-name>
+			<var>messages</var>
+		</resource-bundle>
+		<resource-bundle>
+			<base-name>system</base-name>
+			<var>system</var>
+		</resource-bundle>
+		<locale-config>
+			<default-locale>zh_TW</default-locale>
+			<supported-locale>zh_CN</supported-locale>
+			<supported-locale>en</supported-locale>
+		</locale-config>
+	</application>
+
+	<!-- default error navigation rule end -->
+</faces-config>
