@@ -65,7 +65,7 @@ public class MenuManagedBean implements Serializable {
 		//this.userId = JSFUtils.getHttpServletRequest().getRemoteUser();
         logger.info("login java_jsf_tempate user id ="+userId);
         
-		this.userWSVO = this.getPortalClient().findUserById(this.getSystemId(), userId);
+		this.userWSVO = this.getPortalClient().findUserById(this.getSystemId(), userId.toUpperCase());
 		ModuleWSVO2[] moduleArray = this.getPortalClient().findModuleBySystem(this.getSystemId());
 
 		this.moduleWSVO2s = new ArrayList<ModuleWSVO2>();
