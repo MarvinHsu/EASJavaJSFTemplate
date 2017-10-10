@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-deployment-structure>
+    <deployment>
+        <dependencies>
+            <module name="org.dom4j"/>
+            <module name="org.jboss.resteasy.resteasy-jaxb-provider"/>
+            <module name="org.jboss.resteasy.resteasy-jackson2-provider"/>
+            <module name="org.jboss.resteasy.resteasy-spring"/>
+            <module name="javax.ws.rs.api"/>
+        </dependencies>
+    </deployment>
+</jboss-deployment-structure>
