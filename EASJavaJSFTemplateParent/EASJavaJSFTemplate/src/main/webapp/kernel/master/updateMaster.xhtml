@@ -6,7 +6,9 @@
 	xmlns:p="http://primefaces.org/ui">
 <body>
 	<ui:composition template="/template/backOfficeTemplate.xhtml">
-		<ui:define name="title">#{resources.com_hsuforum_eastjavatemplate_entity_Master}</ui:define>
+		<ui:define name="head">
+			<title>#{resources.com_hsuforum_eastjavatemplate_entity_Master}</title>
+		</ui:define>
 		<ui:define name="main">
 			<h:form id="updateForm">
 				<h1>#{resources.com_hsuforum_eastjavatemplate_entity_Master}-#{resources.update}</h1>
