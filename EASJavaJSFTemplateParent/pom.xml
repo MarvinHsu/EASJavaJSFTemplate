@@ -9,6 +9,7 @@
 		<module>EASJavaJSFTemplate</module>
 		<module>EASJavaJSFTemplateJBossDB2</module>
 		<module>EASJavaJSFTemplateJBossMySQL</module>
+		<module>EASJavaJSFTemplateJBossOracle</module>
 		<module>EASJavaJSFTemplateTomcatDB2</module>
 		<module>EASJavaJSFTemplateTomcatMySQL</module>
 		<module>EASJavaJSFTemplateTomcatOracle</module>
@@ -447,7 +448,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
-				<version>2.6</version>
+				<version>3.1.0</version>
 				<configuration>
 
 					<webResources>
