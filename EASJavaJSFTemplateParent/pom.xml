@@ -11,6 +11,7 @@
 		<module>EASJavaJSFTemplateTomcatMySQL</module>
 		<module>EASJavaJSFTemplateJBossDB2</module>
 		<module>EASJavaJSFTemplateJBossMySQL</module>
+		<module>EASJavaJSFTemplateJBossOracle</module>
 
 	</modules>
 	<properties>
