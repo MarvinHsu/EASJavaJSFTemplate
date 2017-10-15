@@ -7,11 +7,12 @@
 	<packaging>pom</packaging>
 	<modules>
 		<module>EASJavaJSFTemplate</module>
-		<module>EASJavaJSFTemplateTomcatDB2</module>
-		<module>EASJavaJSFTemplateTomcatMySQL</module>
 		<module>EASJavaJSFTemplateJBossDB2</module>
 		<module>EASJavaJSFTemplateJBossMySQL</module>
-		<module>EASJavaJSFTemplateJBossOracle</module>
+		<module>EASJavaJSFTemplateTomcatDB2</module>
+		<module>EASJavaJSFTemplateTomcatMySQL</module>
+		<module>EASJavaJSFTemplateTomcatOracle</module>
+		
 
 	</modules>
 	<properties>
