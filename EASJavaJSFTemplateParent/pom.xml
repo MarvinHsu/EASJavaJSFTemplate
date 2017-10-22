@@ -13,6 +13,7 @@
 		<module>EASJavaJSFTemplateTomcatDB2</module>
 		<module>EASJavaJSFTemplateTomcatMySQL</module>
 		<module>EASJavaJSFTemplateTomcatOracle</module>
+		<module>EASJavaJSFTemplateTomcatSQLServer</module>
 		
 
 	</modules>
