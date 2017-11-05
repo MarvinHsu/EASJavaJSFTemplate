@@ -10,6 +10,7 @@
 		<module>EASJavaJSFTemplateJBossDB2</module>
 		<module>EASJavaJSFTemplateJBossMySQL</module>
 		<module>EASJavaJSFTemplateJBossOracle</module>
+		<module>EASJavaJSFTemplateJBossPostgreSQL</module>
 		<module>EASJavaJSFTemplateJBossSQLServer</module>
 		<module>EASJavaJSFTemplateTomcatDB2</module>
 		<module>EASJavaJSFTemplateTomcatMySQL</module>
