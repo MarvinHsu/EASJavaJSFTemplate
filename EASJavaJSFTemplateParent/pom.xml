@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.hsuforum.EASJavaJSFTemplate</groupId>
 	<artifactId>EASJavaJSFTemplateParent</artifactId>
-	<version>1.0</version>
+	<version>1.0.1</version>
 	<packaging>pom</packaging>
 	<modules>
 		<module>EASJavaJSFTemplate</module>
@@ -24,8 +24,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<primefaces.version>6.1</primefaces.version>
 		<primefaces.extension.version>6.1.0</primefaces.extension.version>
-		<spring.version>5.0.1.RELEASE</spring.version>
-		<springSecurity.version>4.2.3.RELEASE</springSecurity.version>
+		<spring.version>5.0.2.RELEASE</spring.version>
+		<springSecurity.version>5.0.0.RELEASE</springSecurity.version>
 		<java.version>1.8</java.version>
 	</properties>
 	<dependencies>
