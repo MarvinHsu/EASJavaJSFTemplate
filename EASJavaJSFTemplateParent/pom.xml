@@ -24,7 +24,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<primefaces.version>6.1</primefaces.version>
 		<primefaces.extension.version>6.1.0</primefaces.extension.version>
-		<spring.version>5.0.2.RELEASE</spring.version>
+		<spring.version>5.0.3.RELEASE</spring.version>
 		<springSecurity.version>5.0.0.RELEASE</springSecurity.version>
 		<java.version>1.8</java.version>
 	</properties>
@@ -384,6 +384,47 @@
 			<groupId>org.jasig.cas.client</groupId>
 			<artifactId>cas-client-support-saml</artifactId>
 			<version>3.4.1</version>
+		</dependency>
+		<!-- javamelody-core -->
+		<dependency>
+			<groupId>net.bull.javamelody</groupId>
+			<artifactId>javamelody-core</artifactId>
+			<version>1.70.0</version>
+		</dependency>
+		<!-- itext, option to add PDF export -->
+		<dependency>
+			<groupId>com.lowagie</groupId>
+			<artifactId>itext</artifactId>
+			<version>2.1.7</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>bcmail-jdk14</artifactId>
+					<groupId>bouncycastle</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>bcprov-jdk14</artifactId>
+					<groupId>bouncycastle</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>bctsp-jdk14</artifactId>
+					<groupId>bouncycastle</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.thoughtworks.xstream</groupId>
+			<artifactId>xstream</artifactId>
+			<version>1.4.10</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jrobin</groupId>
+			<artifactId>jrobin</artifactId>
+			<version>1.5.9</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.reactivestreams</groupId>
+		    <artifactId>reactive-streams</artifactId>
+		    <version>1.0.2</version>
 		</dependency>
 	</dependencies>
 	<dependencyManagement>

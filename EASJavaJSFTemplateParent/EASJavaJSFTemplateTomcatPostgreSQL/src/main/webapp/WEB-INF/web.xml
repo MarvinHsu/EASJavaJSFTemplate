@@ -114,6 +114,15 @@
 		</init-param>
 	</filter>
 	<filter>
+		<filter-name>javamelody</filter-name>
+		<filter-class>net.bull.javamelody.MonitoringFilter</filter-class>
+		<async-supported>true</async-supported>
+		<init-param>
+			<param-name>rum-enabled</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter>
 		<filter-name>OpenEntityManagerInViewFilter</filter-name>
 		<filter-class>org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter</filter-class>
 	</filter>
@@ -144,6 +153,12 @@
 		<servlet-name>Faces Servlet</servlet-name>
 	</filter-mapping>
 	<filter-mapping>
+		<filter-name>javamelody</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>ASYNC</dispatcher>
+	</filter-mapping>
+	<filter-mapping>
 		<filter-name>OpenEntityManagerInViewFilter</filter-name>
 		<servlet-name>Faces Servlet</servlet-name>
 	</filter-mapping>
@@ -161,6 +176,9 @@
 	</listener>
 	<listener>
 		<listener-class>org.springframework.security.web.session.HttpSessionEventPublisher</listener-class>
+	</listener>
+	<listener>
+		<listener-class>net.bull.javamelody.SessionListener</listener-class>
 	</listener>
 	<servlet>
 		<servlet-name>Faces Servlet</servlet-name>
