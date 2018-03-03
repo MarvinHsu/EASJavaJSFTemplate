@@ -22,10 +22,10 @@
 	</modules>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<primefaces.version>6.1</primefaces.version>
-		<primefaces.extension.version>6.1.0</primefaces.extension.version>
-		<spring.version>5.0.3.RELEASE</spring.version>
-		<springSecurity.version>5.0.1.RELEASE</springSecurity.version>
+		<primefaces.version>6.2</primefaces.version>
+		<primefaces.extension.version>6.2</primefaces.extension.version>
+		<spring.version>5.0.4.RELEASE</spring.version>
+		<springSecurity.version>5.0.3.RELEASE</springSecurity.version>
 		<java.version>1.8</java.version>
 	</properties>
 	<dependencies>
@@ -134,11 +134,6 @@
 		<dependency>
 			<groupId>org.primefaces.extensions</groupId>
 			<artifactId>resources-ckeditor</artifactId>
-			<version>${primefaces.extension.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.primefaces.extensions</groupId>
-			<artifactId>resources-codemirror</artifactId>
 			<version>${primefaces.extension.version}</version>
 		</dependency>
 
