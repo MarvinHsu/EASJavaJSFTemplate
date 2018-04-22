@@ -17,11 +17,11 @@ import com.hsuforum.common.entity.impl.BaseEntityImpl;
 
 
 /**
- * The persistent class for the tb_many1 database table.
+ * The persistent class for the TB_MANY1 database table.
  * 
  */
 @Entity
-@Table(name="tb_many1")
+@Table(name="TB_MANY1")
 @NamedQuery(name="Many1.findAll", query="SELECT m FROM Many1 m")
 public class Many1  extends BaseEntityImpl<String> {
 	private static final long serialVersionUID = 1L;
@@ -66,7 +66,7 @@ public class Many1  extends BaseEntityImpl<String> {
 	//bi-directional many-to-many association to Many2
 	@ManyToMany(targetEntity = Many2.class, cascade = { CascadeType.ALL })
 	@JoinTable(
-		name="tb_many_rel"
+		name="TB_MANY_REL"
 		, joinColumns={
 			@JoinColumn(name="TB_MANY1_ID")
 			}

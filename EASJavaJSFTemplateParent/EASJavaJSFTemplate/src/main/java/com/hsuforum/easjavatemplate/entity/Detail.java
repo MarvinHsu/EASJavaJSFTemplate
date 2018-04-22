@@ -13,11 +13,11 @@ import com.hsuforum.common.entity.impl.BaseEntityImpl;
 
 
 /**
- * The persistent class for the tb_detail database table.
+ * The persistent class for the TB_DETAIL database table.
  * 
  */
 @Entity
-@Table(name="tb_detail")
+@Table(name="TB_DETAIL")
 @NamedQuery(name="Detail.findAll", query="SELECT d FROM Detail d")
 public class Detail  extends BaseEntityImpl<String> {
 	private static final long serialVersionUID = 1L;
