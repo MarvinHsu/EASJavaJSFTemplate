@@ -14,11 +14,11 @@ import com.hsuforum.common.entity.impl.BaseEntityImpl;
 
 
 /**
- * The persistent class for the tb_master database table.
+ * The persistent class for the TB_MASTER database table.
  * 
  */
 @Entity
-@Table(name="tb_master")
+@Table(name="TB_MASTER")
 @NamedQuery(name="Master.findAll", query="SELECT m FROM Master m")
 public class Master  extends BaseEntityImpl<String> {
 	private static final long serialVersionUID = 1L;

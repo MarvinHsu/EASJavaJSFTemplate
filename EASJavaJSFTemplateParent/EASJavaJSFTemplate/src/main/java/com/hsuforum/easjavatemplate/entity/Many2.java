@@ -15,11 +15,11 @@ import com.hsuforum.common.entity.impl.BaseEntityImpl;
 
 
 /**
- * The persistent class for the tb_many2 database table.
+ * The persistent class for the TB_MANY2 database table.
  * 
  */
 @Entity
-@Table(name="tb_many2")
+@Table(name="TB_MANY2")
 @NamedQuery(name="Many2.findAll", query="SELECT m FROM Many2 m")
 public class Many2  extends BaseEntityImpl<String> {
 	private static final long serialVersionUID = 1L;
