@@ -17,7 +17,7 @@
 		<java.version>1.8</java.version>
 		<systemId>EASJavaJSFTemplate</systemId>
 		<systemUrl>https://localhost:8443/EASJavaJSFTemplate</systemUrl>
-		<ssoUrl>https://localhost:8443/cas</ssoUrl>
+		<ssoUrl>https://localhost:9443/cas</ssoUrl>
 		<portalWSURI>https://localhost:8443/EASPortal/rest</portalWSURI>
 	</properties>
 	<dependencies>
