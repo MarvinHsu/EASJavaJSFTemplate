@@ -27,6 +27,25 @@
             </list>
         </property>
     </bean>
-    
+    <bean id="facadeMonitoringAdvisor"
+		class="net.bull.javamelody.MonitoringSpringAdvisor">
+		<property name="pointcut">
+			<bean
+				class="org.springframework.aop.support.JdkRegexpMethodPointcut">
+				<property name="patterns">
+					<list>
+						<value>com.hsuforum..*Service.find*</value>
+						<value>com.hsuforum..*Facade.find*</value>
+						<value>com.hsuforum..*Service.create*</value>
+						<value>com.hsuforum..*Facade.create*</value>
+						<value>com.hsuforum..*Service.update*</value>
+						<value>com.hsuforum..*Facade.update*</value>
+						<value>com.hsuforum..*Service.delete*</value>
+						<value>com.hsuforum..*Facade.delete*</value>
+					</list>
+				</property>
+			</bean>
+		</property>
+	</bean>
     
 </beans>

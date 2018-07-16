@@ -1,10 +1,11 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.hsuforum.EASJavaJSFTemplate</groupId>
 		<artifactId>EASJavaJSFTemplateParent</artifactId>
-		<version>1.0.1</version>
+		<version>1.0.2</version>
 	</parent>
 	<artifactId>EASJavaJSFTemplateJBossPostgreSQL</artifactId>
 	<packaging>war</packaging>
@@ -16,7 +17,7 @@
 		<java.version>1.8</java.version>
 		<systemId>EASJavaJSFTemplate</systemId>
 		<systemUrl>https://localhost:8443/EASJavaJSFTemplate</systemUrl>
-		<ssoUrl>https://localhost:8443/cas</ssoUrl>
+		<ssoUrl>https://localhost:9443/cas</ssoUrl>
 		<portalWSURI>https://localhost:8443/EASPortal/rest</portalWSURI>
 	</properties>
 	<dependencies>
@@ -170,7 +171,25 @@
 					<skip>true</skip>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId> org.codehaus.mojo </groupId>
+				<artifactId>aspectj-maven-plugin</artifactId>
+				<version>1.8</version>
+				<configuration>
+					<complianceLevel>${java.version}</complianceLevel>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+				<executions>
+					<execution>
 
+						<goals>
+							<goal>compile</goal>
+							<goal>test-compile</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 		<pluginManagement>
 			<plugins>

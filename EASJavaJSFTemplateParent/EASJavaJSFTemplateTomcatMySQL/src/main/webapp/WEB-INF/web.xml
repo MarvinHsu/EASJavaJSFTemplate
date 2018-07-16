@@ -5,7 +5,9 @@
 	<display-name>EASJavaJSFTemplate</display-name>
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath*:DbContext.xml, 
+		<param-value>
+			classpath*:net/bull/javamelody/monitoring-spring.xml,
+			classpath*:DbContext.xml, 
 			classpath*:DaoContext.xml,
 			classpath*:ServiceContext.xml, 
 			classpath*:JobSchedule.xml,
