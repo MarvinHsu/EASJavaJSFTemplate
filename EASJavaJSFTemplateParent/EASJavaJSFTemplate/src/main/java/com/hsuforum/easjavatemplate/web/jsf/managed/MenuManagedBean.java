@@ -12,7 +12,6 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 
-import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jasig.cas.client.authentication.AttributePrincipal;
@@ -20,7 +19,6 @@ import org.primefaces.component.accordionpanel.AccordionPanel;
 import org.primefaces.event.TabChangeEvent;
 
 import com.hsuforum.common.web.jsf.utils.JSFUtils;
-import com.hsuforum.easjavatemplate.entity.FunctionCode;
 import com.hsuforum.easjavatemplate.web.config.DefaultConfigManagedBean;
 import com.hsuforum.easjavatemplate.ws.client.PortalClient;
 import com.hsuforum.easjavatemplate.ws.vo.FunctionWSVO2;
