@@ -111,14 +111,8 @@ public class MenuManagedBean implements Serializable {
 		String obj = (String) event.getComponent().getAttributes().get("functionCode");
 
 		// Remove managed bean of session
-		for (FunctionCode functionCode : FunctionCode.values()) {
-			if (!StringUtils.isBlank(functionCode.getManagedBean())) {
-				if (obj.equals(functionCode.getCode())) {
-					FacesContext context = FacesContext.getCurrentInstance();
-					context.getExternalContext().getSessionMap().remove(functionCode.getManagedBean());
-				}
-			}
-		}
+		FacesContext context = FacesContext.getCurrentInstance();
+		context.getExternalContext().getSessionMap().remove(obj+"ManagedBean");
 
 	}
 
