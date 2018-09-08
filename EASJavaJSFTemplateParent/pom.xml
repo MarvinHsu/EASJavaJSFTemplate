@@ -24,7 +24,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<primefaces.version>6.2</primefaces.version>
 		<primefaces.extension.version>6.2</primefaces.extension.version>
-		<spring.version>5.0.8.RELEASE</spring.version>
+		<spring.version>5.0.9.RELEASE</spring.version>
 		<springSecurity.version>5.0.7.RELEASE</springSecurity.version>
 		<java.version>1.8</java.version>
 	</properties>
