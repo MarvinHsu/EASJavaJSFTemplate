@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>com.hsuforum.EASJavaJSFTemplate</groupId>
 		<artifactId>EASJavaJSFTemplateParent</artifactId>
-		<version>1.0.2</version>
+		<version>1.0.3</version>
 	</parent>
 	<artifactId>EASJavaJSFTemplateTomcatOracle</artifactId>
 	<packaging>war</packaging>
@@ -13,7 +13,6 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<javaserverfaces.version>2.2.14</javaserverfaces.version>
 		<resteasy.version>3.0.19.Final</resteasy.version>
-		<jackson.version>2.9.1</jackson.version>
 		<hibernate.version>5.2.17.Final</hibernate.version>
 		<java.version>1.8</java.version>
 		<systemId>EASJavaJSFTemplate</systemId>
@@ -83,21 +82,6 @@
 			<groupId>org.jboss.resteasy</groupId>
 			<artifactId>resteasy-client</artifactId>
 			<version>${resteasy.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-core</artifactId>
-			<version>${jackson.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-			<version>${jackson.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-annotations</artifactId>
-			<version>${jackson.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
