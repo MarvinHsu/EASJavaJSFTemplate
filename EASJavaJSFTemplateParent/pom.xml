@@ -24,8 +24,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<primefaces.version>6.2</primefaces.version>
 		<primefaces.extension.version>6.2</primefaces.extension.version>
-		<spring.version>5.1.0.RELEASE</spring.version>
-		<springSecurity.version>5.1.0.RELEASE</springSecurity.version>
+		<spring.version>5.1.1.RELEASE</spring.version>
+		<springSecurity.version>5.1.1.RELEASE</springSecurity.version>
 		<jackson.version>2.9.6</jackson.version>
 		<java.version>1.8</java.version>
 	</properties>
@@ -595,7 +595,11 @@
 			<url>http://repository.primefaces.org/</url>
 			<layout>default</layout>
 		</pluginRepository>
-		
+		<pluginRepository>
+			<id>spring-release</id>
+			<name>release</name>
+			<url>https://repo.spring.io/release</url>
+		</pluginRepository>
 	</pluginRepositories>
 	<repositories>
 
@@ -617,6 +621,10 @@
 			<url>http://repository.primefaces.org/</url>
 			<layout>default</layout>
 		</repository>
-		
+		<repository>
+			<id>spring-release</id>
+			<name>release</name>
+			<url>https://repo.spring.io/release</url>
+		</repository>
 	</repositories>
 </project>
