@@ -24,8 +24,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<primefaces.version>6.2</primefaces.version>
 		<primefaces.extension.version>6.2</primefaces.extension.version>
-		<spring.version>5.1.0.RELEASE</spring.version>
-		<springSecurity.version>5.1.0.RELEASE</springSecurity.version>
+		<spring.version>5.1.2.RELEASE</spring.version>
+		<springSecurity.version>5.1.1.RELEASE</springSecurity.version>
 		<jackson.version>2.9.6</jackson.version>
 		<java.version>1.8</java.version>
 	</properties>
@@ -235,9 +235,13 @@
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjweaver</artifactId>
-			<version>1.8.9</version>
+			<version>1.8.13</version>
 		</dependency>
-
+		<dependency>
+		    <groupId>org.aspectj</groupId>
+		    <artifactId>aspectjrt</artifactId>
+		    <version>1.8.13</version>
+		</dependency>
 		<dependency>
 			<groupId>aopalliance</groupId>
 			<artifactId>aopalliance</artifactId>
@@ -311,7 +315,7 @@
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
-			<version>4.3.3</version>
+			<version>4.5.6</version>
 			<type>jar</type>
 		</dependency>
 		<dependency>
@@ -359,19 +363,19 @@
 		<dependency>
 			<groupId>org.jasig.cas.client</groupId>
 			<artifactId>cas-client-core</artifactId>
-			<version>3.4.1</version>
+			<version>3.5.0</version>
 		</dependency>
 		
 		<dependency>
 			<groupId>org.jasig.cas.client</groupId>
 			<artifactId>cas-client-support-saml</artifactId>
-			<version>3.4.1</version>
+			<version>3.5.0</version>
 		</dependency>
 		<!-- javamelody-core -->
 		<dependency>
 			<groupId>net.bull.javamelody</groupId>
 			<artifactId>javamelody-core</artifactId>
-			<version>1.73.1</version>
+			<version>1.74.0</version>
 		</dependency>
 		<!-- itext, option to add PDF export -->
 		<dependency>
@@ -521,7 +525,25 @@
 					<skip>true</skip>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId> org.codehaus.mojo </groupId>
+				<artifactId>aspectj-maven-plugin</artifactId>
+				<version>1.11</version>
+				<configuration>
+					<complianceLevel>${java.version}</complianceLevel>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+				<executions>
+					<execution>
 
+						<goals>
+							<goal>compile</goal>
+							<goal>test-compile</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 		<pluginManagement>
 			<plugins>
@@ -595,7 +617,11 @@
 			<url>http://repository.primefaces.org/</url>
 			<layout>default</layout>
 		</pluginRepository>
-		
+		<pluginRepository>
+			<id>spring-release</id>
+			<name>release</name>
+			<url>https://repo.spring.io/release</url>
+		</pluginRepository>
 	</pluginRepositories>
 	<repositories>
 
@@ -617,6 +643,10 @@
 			<url>http://repository.primefaces.org/</url>
 			<layout>default</layout>
 		</repository>
-		
+		<repository>
+			<id>spring-release</id>
+			<name>release</name>
+			<url>https://repo.spring.io/release</url>
+		</repository>
 	</repositories>
 </project>
