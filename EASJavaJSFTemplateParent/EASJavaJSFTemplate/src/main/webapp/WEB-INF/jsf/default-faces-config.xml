@@ -10,7 +10,7 @@
 		<managed-property>
 			<property-name>systemCode</property-name>
 			<property-class>java.lang.String</property-class>
-			<value>HSUForum</value>
+			<value>EASJavaTemplate</value>
 		</managed-property>
 		<managed-property>
 			<property-name>devMode</property-name>
@@ -21,11 +21,6 @@
 			<property-name>rowsOfPerPage</property-name>
 			<property-class>java.lang.Integer</property-class>
 			<value>25</value>
-		</managed-property>
-		<managed-property>
-			<property-name>mailFrom</property-name>
-			<property-class>java.lang.String</property-class>
-			<value>weichehsu1979@gmail.com</value>
 		</managed-property>
 		<managed-property>
 			<property-name>timeZone</property-name>
