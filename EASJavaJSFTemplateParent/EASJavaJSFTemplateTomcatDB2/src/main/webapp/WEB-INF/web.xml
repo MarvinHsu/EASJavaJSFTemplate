@@ -52,14 +52,17 @@
 		<param-name>resteasy.servlet.mapping.prefix</param-name>
 		<param-value>/rest</param-value>
 	</context-param>
-
+	<filter>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
 	<filter>
 		<filter-name>CasSingleSignOutFilter</filter-name>
 		<filter-class>org.jasig.cas.client.session.SingleSignOutFilter</filter-class>
-		<init-param>
-			<param-name>artifactParameterName</param-name>
-			<param-value>SAMLart</param-value>
-		</init-param>
 		<init-param>
 			<param-name>casServerUrlPrefix</param-name>
 			<param-value>${ssoUrl}</param-value>
@@ -67,7 +70,7 @@
 	</filter>
 	<filter>
 		<filter-name>CasValidationFilter</filter-name>
-		<filter-class>org.jasig.cas.client.validation.Saml11TicketValidationFilter</filter-class>
+		<filter-class>org.jasig.cas.client.validation.Cas30ProxyReceivingTicketValidationFilter</filter-class>
 		<init-param>
 			<param-name>casServerUrlPrefix</param-name>
 			<param-value>${ssoUrl}</param-value>
@@ -76,17 +79,15 @@
 			<param-name>serverName</param-name>
 			<param-value>${systemUrl}</param-value>
 		</init-param>
-
 		<init-param>
-			<param-name>casServerLoginUrl</param-name>
-			<param-value>${ssoUrl}/login</param-value>
+			<param-name>acceptAnyProxy</param-name>
+			<param-value>true</param-value>
 		</init-param>
-
 	</filter>
 
 	<filter>
 		<filter-name>CasAuthenticationFilter</filter-name>
-		<filter-class>org.jasig.cas.client.authentication.Saml11AuthenticationFilter</filter-class>
+		<filter-class>org.jasig.cas.client.authentication.AuthenticationFilter</filter-class>
 		<init-param>
 			<param-name>casServerUrlPrefix</param-name>
 			<param-value>${ssoUrl}</param-value>
@@ -106,14 +107,9 @@
 		<filter-name>CasHttpServletRequestWrapperFilter</filter-name>
 		<filter-class>org.jasig.cas.client.util.HttpServletRequestWrapperFilter</filter-class>
 	</filter>
-
 	<filter>
-		<filter-name>CharacterEncodingFilter</filter-name>
-		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
-		<init-param>
-			<param-name>encoding</param-name>
-			<param-value>UTF-8</param-value>
-		</init-param>
+		<filter-name>CASAssertionThreadLocalFilter</filter-name>
+		<filter-class>org.jasig.cas.client.util.AssertionThreadLocalFilter</filter-class>
 	</filter>
 	<filter>
 		<filter-name>javamelody</filter-name>
@@ -129,6 +125,10 @@
 		<filter-class>org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter</filter-class>
 	</filter>
 	<filter-mapping>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
 		<filter-name>CasSingleSignOutFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
@@ -140,20 +140,14 @@
 		<filter-name>CasAuthenticationFilter</filter-name>
 		<url-pattern>/kernel/*</url-pattern>
 	</filter-mapping>
-
 	<filter-mapping>
 		<filter-name>CasHttpServletRequestWrapperFilter</filter-name>
 		<url-pattern>/kernel/*</url-pattern>
 	</filter-mapping>
-
 	<filter-mapping>
-		<filter-name>CharacterEncodingFilter</filter-name>
+		<filter-name>CASAssertionThreadLocalFilter</filter-name>
 		<url-pattern>/*</url-pattern>
-	</filter-mapping>
-	<filter-mapping>
-		<filter-name>CharacterEncodingFilter</filter-name>
-		<servlet-name>Faces Servlet</servlet-name>
-	</filter-mapping>
+	</filter-mapping>	
 	<filter-mapping>
 		<filter-name>javamelody</filter-name>
 		<url-pattern>/*</url-pattern>
