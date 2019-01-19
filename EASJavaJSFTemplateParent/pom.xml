@@ -26,7 +26,7 @@
 		<primefaces.extension.version>6.2</primefaces.extension.version>
 		<spring.version>5.1.3.RELEASE</spring.version>
 		<springSecurity.version>5.1.2.RELEASE</springSecurity.version>
-		<jackson.version>2.9.6</jackson.version>
+		<jackson.version>2.9.8</jackson.version>
 		<java.version>1.8</java.version>
 	</properties>
 	<dependencies>
