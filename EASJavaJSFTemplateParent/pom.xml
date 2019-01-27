@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.hsuforum.EASJavaJSFTemplate</groupId>
 	<artifactId>EASJavaJSFTemplateParent</artifactId>
-	<version>1.0.4</version>
+	<version>1.0.5</version>
 	<packaging>pom</packaging>
 	<modules>
 		<module>EASJavaJSFTemplate</module>
@@ -435,23 +435,23 @@
 			<dependency>
 				<groupId>com.hsuforum.HSUCommonParent</groupId>
 				<artifactId>CommonEntity</artifactId>
-				<version>2.0.4</version>
+				<version>2.0.5</version>
 			</dependency>
 			<dependency>
 				<groupId>com.hsuforum.HSUCommonParent</groupId>
 				<artifactId>CommonDao</artifactId>
-				<version>2.0.4</version>
+				<version>2.0.5</version>
 			</dependency>
 
 			<dependency>
 				<groupId>com.hsuforum.HSUCommonParent</groupId>
 				<artifactId>CommonService</artifactId>
-				<version>2.0.4</version>
+				<version>2.0.5</version>
 			</dependency>
 			<dependency>
 				<groupId>com.hsuforum.HSUCommonParent</groupId>
 				<artifactId>CommonWeb</artifactId>
-				<version>2.0.4</version>
+				<version>2.0.5</version>
 			</dependency>
 
 		</dependencies>
