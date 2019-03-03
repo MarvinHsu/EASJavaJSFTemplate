@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>com.hsuforum.EASJavaJSFTemplate</groupId>
 		<artifactId>EASJavaJSFTemplateParent</artifactId>
-		<version>1.0.4</version>
+		<version>1.0.5</version>
 	</parent>
 	<artifactId>EASJavaJSFTemplateTomcatSQLServer</artifactId>
 	<packaging>war</packaging>
@@ -93,7 +93,11 @@
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>${hibernate.version}</version>
 		</dependency>
-
+		<dependency>
+			<groupId>org.javassist</groupId>
+			<artifactId>javassist</artifactId>
+			<version>3.24.1-GA</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>EASJavaJSFTemplate</finalName>
@@ -171,9 +175,9 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId> org.codehaus.mojo </groupId>
+				<groupId>com.nickwongdev</groupId>
 				<artifactId>aspectj-maven-plugin</artifactId>
-				<version>1.11</version>
+				<version>1.12.1</version>
 				<configuration>
 					<complianceLevel>${java.version}</complianceLevel>
 					<source>${java.version}</source>
@@ -202,7 +206,7 @@
 							<pluginExecutions>
 								<pluginExecution>
 									<pluginExecutionFilter>
-										<groupId>org.codehaus.mojo</groupId>
+										<groupId>com.nickwongdev</groupId>
 										<artifactId>aspectj-maven-plugin</artifactId>
 										<versionRange>[1.0,)</versionRange>
 										<goals>
