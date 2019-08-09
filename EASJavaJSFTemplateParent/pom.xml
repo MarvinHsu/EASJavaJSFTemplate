@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.hsuforum.EASJavaJSFTemplate</groupId>
 	<artifactId>EASJavaJSFTemplateParent</artifactId>
-	<version>1.0.7</version>
+	<version>1.0.8</version>
 	<packaging>pom</packaging>
 	<modules>
 		<module>EASJavaJSFTemplate</module>
@@ -24,10 +24,11 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<primefaces.version>7.0</primefaces.version>
 		<primefaces.extension.version>7.0</primefaces.extension.version>
-		<spring.version>5.1.7.RELEASE</spring.version>
-		<springSecurity.version>5.1.5.RELEASE</springSecurity.version>
-		<springData.version>Lovelace-SR8</springData.version>
+		<spring.version>5.1.9.RELEASE</spring.version>
+		<springSecurity.version>5.1.6.RELEASE</springSecurity.version>
+		<springData.version>Lovelace-SR10</springData.version>
 		<jackson.version>2.9.9</jackson.version>
+		<jackson-databind.version>2.9.9.2</jackson-databind.version>
 		<java.version>1.8</java.version>
 	</properties>
 	<dependencies>
@@ -380,7 +381,7 @@
 		<dependency>
 			<groupId>net.bull.javamelody</groupId>
 			<artifactId>javamelody-core</artifactId>
-			<version>1.77.0</version>
+			<version>1.79.0</version>
 		</dependency>
 		<!-- itext, option to add PDF export -->
 		<dependency>
@@ -405,7 +406,7 @@
 		<dependency>
 			<groupId>com.thoughtworks.xstream</groupId>
 			<artifactId>xstream</artifactId>
-			<version>1.4.10</version>
+			<version>1.4.11</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jrobin</groupId>
@@ -425,7 +426,7 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>${jackson.version}</version>
+			<version>${jackson-databind.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
@@ -460,23 +461,23 @@
 			<dependency>
 				<groupId>com.hsuforum.HSUCommonParent</groupId>
 				<artifactId>CommonEntity</artifactId>
-				<version>3.0.1</version>
+				<version>3.0.2</version>
 			</dependency>
 			<dependency>
 				<groupId>com.hsuforum.HSUCommonParent</groupId>
 				<artifactId>CommonDao</artifactId>
-				<version>3.0.1</version>
+				<version>3.0.2</version>
 			</dependency>
 
 			<dependency>
 				<groupId>com.hsuforum.HSUCommonParent</groupId>
 				<artifactId>CommonService</artifactId>
-				<version>3.0.1</version>
+				<version>3.0.2</version>
 			</dependency>
 			<dependency>
 				<groupId>com.hsuforum.HSUCommonParent</groupId>
 				<artifactId>CommonWeb</artifactId>
-				<version>3.0.1</version>
+				<version>3.0.2</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework.data</groupId>
@@ -501,7 +502,7 @@
 			</plugin>
 			<plugin>
 				<artifactId>maven-resources-plugin</artifactId>
-				<version>3.0.1</version>
+				<version>3.0.2</version>
 				<executions>
 					<execution>
 						<id>copy-resources</id>
