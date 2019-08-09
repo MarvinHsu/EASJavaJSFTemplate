@@ -25,8 +25,8 @@
 		<primefaces.version>7.0</primefaces.version>
 		<primefaces.extension.version>7.0</primefaces.extension.version>
 		<spring.version>5.1.9.RELEASE</spring.version>
-		<springSecurity.version>5.1.5.RELEASE</springSecurity.version>
-		<springData.version>Lovelace-SR9</springData.version>
+		<springSecurity.version>5.1.6.RELEASE</springSecurity.version>
+		<springData.version>Lovelace-SR10</springData.version>
 		<jackson.version>2.9.9</jackson.version>
 		<jackson-databind.version>2.9.9.2</jackson-databind.version>
 		<java.version>1.8</java.version>
