@@ -24,9 +24,9 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<primefaces.version>7.0</primefaces.version>
 		<primefaces.extension.version>7.0</primefaces.extension.version>
-		<spring.version>5.2.2.RELEASE</spring.version>
+		<spring.version>5.2.3.RELEASE</spring.version>
 		<springSecurity.version>5.2.1.RELEASE</springSecurity.version>
-		<springData.version>Moore-SR3</springData.version>
+		<springData.version>Moore-SR4</springData.version>
 		<jackson.version>2.9.10</jackson.version>
 		<jackson-databind.version>2.9.10.1</jackson-databind.version>
 		<hsucommon.version>3.0.4</hsucommon.version>
