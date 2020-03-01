@@ -10,63 +10,61 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 
-import com.hsuforum.common.web.jsf.managedbean.impl.TemplatePrimeDataTableManagedBean;
+import com.hsuforum.common.web.jsf.managedbean.impl.TemplatePrimeJpaDataTableManagedBean;
 import com.hsuforum.common.web.jsf.utils.JSFUtils;
 import com.hsuforum.common.web.vo.ValueObject;
 import com.hsuforum.easjavatemplate.entity.Master;
+import com.hsuforum.easjavatemplate.service.MasterJpaService;
 import com.hsuforum.easjavatemplate.service.MasterService;
 import com.hsuforum.easjavatemplate.web.vo.MasterVo;
 import com.hsuforum.easjavatemplate.web.vowrapper.MasterVoWrapper;
 
-	
-
-
 /**
  * Master managedBean
+ * 
  * @author Marvin
  *
  */
 @ManagedBean
 @SessionScoped
-public class MasterManagedBean extends TemplatePrimeDataTableManagedBean
-	<Master, java.lang.String, MasterService>{
+public class MasterManagedBean
+		extends TemplatePrimeJpaDataTableManagedBean<Master, java.lang.String, MasterService, MasterJpaService> {
 
 	private static final long serialVersionUID = 1L;
 
-	// Create or update status, create is Create, update is Update for finding real page to return in detail page
+	// Create or update status, create is Create, update is Update for finding real
+	// page to return in detail page
 	private String mode;
 
-
-
-	//Main serive in managedBean
-	@ManagedProperty(value="#{masterService}")
-    private MasterService service;
-
-
+	// Main serive in managedBean
+	@ManagedProperty(value = "#{masterService}")
+	private MasterService service;
+	@ManagedProperty(value = "#{masterJpaService}")
+	private MasterJpaService jpaService;
 
 	/**
 	 * Constructor
 	 */
 	public MasterManagedBean() {
-		
+
 		super();
 
 	}
-	
+
 	/**
 	 * Init config
 	 */
 	@PostConstruct
 	public void init() {
-		//Set show data in read page
+		// Set show data in read page
 		this.setInitShowListData(true);
-		//Init find criteria
+		// Init find criteria
 		this.initFindCriteriaMap();
-		//Set vo wrapper
+		// Set vo wrapper
 		this.setVoWrapper(new MasterVoWrapper());
-	
+
 	}
-	
+
 	/**
 	 * @return the mode
 	 */
@@ -81,10 +79,9 @@ public class MasterManagedBean extends TemplatePrimeDataTableManagedBean
 		this.mode = mode;
 	}
 
-		
-
 	/**
 	 * Init create object
+	 * 
 	 * @see com.hsuforum.common.web.jsf.managedbean.impl.BaseManagedBean#initCreatingData()
 	 *
 	 */
@@ -93,52 +90,50 @@ public class MasterManagedBean extends TemplatePrimeDataTableManagedBean
 		Master object = new Master();
 		object.setId(UUID.randomUUID().toString());
 		this.setUpdatingData(this.wrap(object));
-		
+
 		this.setMode("Create");
-			//Because has master-detail relationship, so remove managedbean in session
+		// Because has master-detail relationship, so remove managedbean in session
 		JSFUtils.getFacesContext().getExternalContext().getSessionMap().remove("master_DetailManagedBean");
-		}
-	
+	}
+
 	/**
-	 * If you need to process updating data after press create or update button, you need override this method
+	 * If you need to process updating data after press create or update button, you
+	 * need override this method
 	 * 
 	 */
 	@Override
 	protected void initUpdatingData(ValueObject<Master, java.lang.String> updatingData) {
-	
 
 		this.setMode("Update");
-			//Because has master-detail relationship, so remove managedbean in session
+		// Because has master-detail relationship, so remove managedbean in session
 		JSFUtils.getFacesContext().getExternalContext().getSessionMap().remove("master_DetailManagedBean");
-		}
+	}
 
-    /**
+	/**
 	 * Init find criteria map, find oper map and find sort map
 	 *
 	 * @see com.hsuforum.common.web.jsf.managedbean.impl.TemplateDataTableManagedBean#initFindCriteriaMap()
 	 */
 	@Override
 	protected void initFindCriteriaMap() {
-		
+
 		Map<String, Object> findCriteriaMap = new HashMap<String, Object>();
-		
-									
-					findCriteriaMap.put("name", null);
-											
-					findCriteriaMap.put("code", null);
-					
+
+		findCriteriaMap.put("name", null);
+		findCriteriaMap.put("code", null);
+
 		this.setFindCriteriaMap(findCriteriaMap);
-		//Set operation
-        Map<String, String> findOperMap = new HashMap<String, String>();    
-    		findOperMap.put("name", "eq");		
-			findOperMap.put("code", "eq");		
-	        this.setFindOperMap(findOperMap);
-        
-        //設定排序
-        Map<String, String> findSortMap = new HashMap<String, String>();
-    		findSortMap.put("name", "DESC");		
-			findSortMap.put("code", "DESC");		
-	        this.setFindSortMap(findSortMap);
+		// Set operation
+		Map<String, String> findOperMap = new HashMap<String, String>();
+		findOperMap.put("name", "eq");
+		findOperMap.put("code", "eq");
+		this.setFindOperMap(findOperMap);
+
+		// Set sort
+		Map<String, String> findSortMap = new HashMap<String, String>();
+		findSortMap.put("name", "DESC");
+		findSortMap.put("code", "DESC");
+		this.setFindSortMap(findSortMap);
 	}
 
 	/**
@@ -147,9 +142,9 @@ public class MasterManagedBean extends TemplatePrimeDataTableManagedBean
 	 */
 	@Override
 	public MasterVo getUpdatingData() {
-		return (MasterVo)super.getUpdatingData();
+		return (MasterVo) super.getUpdatingData();
 	}
-	
+
 	/**
 	 * Set UpdatingData
 	 * 
@@ -159,26 +154,38 @@ public class MasterManagedBean extends TemplatePrimeDataTableManagedBean
 		super.setUpdatingData(vo);
 	}
 
-    /**
-     * Get service
-     */
-    @Override
-    public MasterService getService() {
+	/**
+	 * Get service
+	 */
+	@Override
+	public MasterService getService() {
 
-        return this.service;
-    }
+		return this.service;
+	}
 
-    /**
-     * Set service
-     * @param service
-     */
-    @Override
-    public void setService(MasterService service) {
-        this.service = service;
-    }
+	/**
+	 * Set service
+	 * 
+	 * @param service
+	 */
+	@Override
+	public void setService(MasterService service) {
+		this.service = service;
+	}
 
+	/**
+	 * @return the jpaService
+	 */
+	public MasterJpaService getJpaService() {
+		return jpaService;
+	}
 
-
+	/**
+	 * @param jpaService the jpaService to set
+	 */
+	public void setJpaService(MasterJpaService jpaService) {
+		this.jpaService = jpaService;
+	}
 
 	/**
 	 * @see com.hsuforum.common.web.jsf.managedbean.impl.BaseManagedBean#setupUpdatingData()
@@ -187,21 +194,18 @@ public class MasterManagedBean extends TemplatePrimeDataTableManagedBean
 	protected void setupUpdatingData() {
 
 	}
-	
+
 	/**
-	 * If entity has many-to-one or many-to-many relation
-	 * then Code Generator will make this method for modifying.
-	 * You can modify it for your need Method.
-	 * The main function is in read page fetch all 
-	 * relational date to avoid update page occur error.
+	 * If entity has many-to-one or many-to-many relation then Code Generator will
+	 * make this method for modifying. You can modify it for your need Method. The
+	 * main function is in read page fetch all relational date to avoid update page
+	 * occur error.
+	 * 
 	 * @see com.hsuforum.common.web.jsf.managedbean.impl.TemplateDataTableManagedBean#findAllData()
 	 */
 	@Override
 	protected List<Master> findAllData() {
 		return this.getService().findAllFetchRelation();
 	}
-	
-	
+
 }
-
-
