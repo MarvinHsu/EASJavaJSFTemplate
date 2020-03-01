@@ -64,7 +64,7 @@ public class Many1  extends BaseEntityImpl<String> {
 
 
 	//bi-directional many-to-many association to Many2
-	@ManyToMany(targetEntity = Many2.class, cascade = { CascadeType.ALL })
+	@ManyToMany(targetEntity = Many2.class, cascade = { CascadeType.MERGE })
 	@JoinTable(
 		name="TB_MANY_REL"
 		, joinColumns={
