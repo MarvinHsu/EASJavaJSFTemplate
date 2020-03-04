@@ -28,7 +28,7 @@
 		<springSecurity.version>5.2.2.RELEASE</springSecurity.version>
 		<springData.version>Moore-SR4</springData.version>
 		<jackson.version>2.9.10</jackson.version>
-		<jackson-databind.version>2.9.10.1</jackson-databind.version>
+		<jackson-databind.version>2.9.10.3</jackson-databind.version>
 		<hsucommon.version>3.0.5</hsucommon.version>
 		<java.version>1.8</java.version>
 	</properties>
