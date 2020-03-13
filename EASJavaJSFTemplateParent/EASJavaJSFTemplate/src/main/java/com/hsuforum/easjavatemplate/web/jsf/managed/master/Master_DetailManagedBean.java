@@ -79,7 +79,7 @@ public class Master_DetailManagedBean
 	/**
 	 * Init create object
 	 * 
-	 * @see com.hsuforum.common.web.jsf.managedbean.impl.BaseManagedBean#initCreatingData()
+	 * @see com.hsuforum.common.web.jsf.managedbean.impl.BaseJpaManagedBeanImpl#initCreatingData()
 	 *
 	 */
 	@Override
@@ -103,7 +103,7 @@ public class Master_DetailManagedBean
 	/**
 	 * Init find criteria map, find oper map and find sort map
 	 *
-	 * @see com.hsuforum.common.web.jsf.managedbean.impl.TemplateDataTableManagedBean#initFindCriteriaMap()
+	 * @see com.hsuforum.common.web.jsf.managedbean.impl.TemplatePrimeJpaDataTableManagedBean#initFindCriteriaMap()
 	 */
 	@Override
 	protected void initFindCriteriaMap() {
@@ -128,7 +128,7 @@ public class Master_DetailManagedBean
 	}
 
 	/**
-	 * @see com.hsuforum.common.web.jsf.managedbean.impl.BaseManagedBean#getUpdatingData()
+	 * @see com.hsuforum.common.web.jsf.managedbean.impl.BaseJpaManagedBeanImpl#getUpdatingData()
 	 *
 	 */
 	@Override
@@ -179,7 +179,7 @@ public class Master_DetailManagedBean
 	}
 
 	/**
-	 * @see com.hsuforum.common.web.jsf.managedbean.impl.BaseManagedBean#setupUpdatingData()
+	 * @see com.hsuforum.common.web.jsf.managedbean.impl.BaseJpaManagedBeanImpl#setupUpdatingData()
 	 */
 	@Override
 	protected void setupUpdatingData() {
@@ -203,7 +203,7 @@ public class Master_DetailManagedBean
 	}
 
 	/**
-	 * @see com.hsuforum.common.web.jsf.managedbean.impl.TemplateDataTableManagedBean#doCreateAction()
+	 * @see com.hsuforum.common.web.jsf.managedbean.impl.TemplatePrimeJpaDataTableManagedBean#doCreateAction()
 	 */
 	@Override
 	public String doCreateAction() {
@@ -213,7 +213,7 @@ public class Master_DetailManagedBean
 	}
 
 	/**
-	 * @see com.hsuforum.common.web.jsf.managedbean.impl.TemplateDataTableManagedBean#doCancelCreateAction()
+	 * @see com.hsuforum.common.web.jsf.managedbean.impl.TemplatePrimeJpaDataTableManagedBean#doCancelCreateAction()
 	 */
 	@Override
 	public String doCancelCreateAction() {
@@ -227,7 +227,7 @@ public class Master_DetailManagedBean
 	}
 
 	/**
-	 * @see com.hsuforum.common.web.jsf.managedbean.impl.TemplateDataTableManagedBean#doSaveCreateAction()
+	 * @see com.hsuforum.common.web.jsf.managedbean.impl.TemplatePrimeJpaDataTableManagedBean#doSaveCreateAction()
 	 */
 	@Override
 	public String doSaveCreateAction() {
@@ -261,7 +261,7 @@ public class Master_DetailManagedBean
 	}
 
 	/**
-	 * @see com.hsuforum.common.web.jsf.managedbean.impl.TemplateDataTableManagedBean#doUpdateAction()
+	 * @see com.hsuforum.common.web.jsf.managedbean.impl.TemplatePrimeJpaDataTableManagedBean#doUpdateAction()
 	 */
 	public String doUpdateAction() {
 		// call parent method
@@ -270,7 +270,7 @@ public class Master_DetailManagedBean
 	}
 
 	/**
-	 * @see com.hsuforum.common.web.jsf.managedbean.impl.TemplateDataTableManagedBean#doSaveUpdateAction()
+	 * @see com.hsuforum.common.web.jsf.managedbean.impl.TemplatePrimeJpaDataTableManagedBean#doSaveUpdateAction()
 	 */
 	@Override
 	public String doSaveUpdateAction() {
@@ -304,7 +304,7 @@ public class Master_DetailManagedBean
 	}
 
 	/**
-	 * @see com.hsuforum.common.web.jsf.managedbean.impl.TemplateDataTableManagedBean#doCancelUpdateAction()
+	 * @see com.hsuforum.common.web.jsf.managedbean.impl.TemplatePrimeJpaDataTableManagedBean#doCancelUpdateAction()
 	 */
 	@Override
 	public String doCancelUpdateAction() {
@@ -318,7 +318,7 @@ public class Master_DetailManagedBean
 	}
 
 	/**
-	 * @see com.hsuforum.common.web.jsf.managedbean.impl.TemplateDataTableManagedBean#doDeleteOneAction()
+	 * @see com.hsuforum.common.web.jsf.managedbean.impl.TemplatePrimeJpaDataTableManagedBean#doDeleteOneAction()
 	 */
 	@Override
 	public String doDeleteAction() {
