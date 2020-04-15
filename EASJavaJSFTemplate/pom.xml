@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.hsuforum.EASJavaJSFTemplate</groupId>
@@ -17,10 +18,10 @@
 		<hsucommon.version>3.0.5</hsucommon.version>
 		<java.version>11</java.version>
 		<appRoot>/Application/EASJavaJSFTemplate</appRoot>
-				<systemUrl>https://localhost:6443</systemUrl>
-				<ssoUrl>https://localhost:9443/cas</ssoUrl>
-				<portalWSURI>https://localhost:8443/EASPortal/rest</portalWSURI>
-				<systemId>EASJavaJSFTemplate</systemId>
+		<systemUrl>https://localhost:6443</systemUrl>
+		<ssoUrl>https://localhost:9443/cas</ssoUrl>
+		<portalWSURI>https://localhost:8443/EASPortal/rest</portalWSURI>
+		<systemId>EASJavaJSFTemplate</systemId>
 	</properties>
 	<dependencies>
 		<dependency>
