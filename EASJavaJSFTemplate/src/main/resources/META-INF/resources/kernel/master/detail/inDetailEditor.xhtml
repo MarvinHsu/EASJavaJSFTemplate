@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:p="http://primefaces.org/ui">
+<p:panel>
+	<h:panelGrid columns="2" columnClasses="column35Class, column65Class">
+
+		<h:outputText
+			value="#{resources.com_hsuforum_eastjavatemplate_entity_Detail_id}" />
+		<p:inputText
+			value="#{master_DetailManagedBean.updatingData.entity.id}"
+			label="#{resources.com_hsuforum_eastjavatemplate_entity_Detail_id}"
+			readOnly="true" />
+
+
+		<h:outputText
+			value="#{resources.com_hsuforum_eastjavatemplate_entity_Detail_name}" />
+		<p:inputText id="inputTextName"
+			value="#{master_DetailManagedBean.updatingData.entity.name}"
+			label="#{resources.com_hsuforum_eastjavatemplate_entity_Detail_name}"
+			required="true" />
+
+
+		<h:outputText
+			value="#{resources.com_hsuforum_eastjavatemplate_entity_Detail_code}" />
+		<p:inputText id="inputTextCode"
+			value="#{master_DetailManagedBean.updatingData.entity.code}"
+			label="#{resources.com_hsuforum_eastjavatemplate_entity_Detail_code}"
+			required="true" />
+
+
+
+	</h:panelGrid>
+</p:panel>
+
+
+</html>

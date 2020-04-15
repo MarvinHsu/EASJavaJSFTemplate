@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<body>
+	<ui:composition template="/template/backOfficeTemplate.xhtml">
+		<ui:define name="head">
+			<title>#{resources.com_hsuforum_eastjavatemplate_entity_Detail}</title>
+		</ui:define>
+		<ui:define name="main">
+			<h:form id="updateForm">
+				<h1>#{resources.com_hsuforum_eastjavatemplate_entity_Detail}-#{resources.update}</h1>
+				<p:growl id="growl" />
+
+
+				<ui:include page="inDetailEditor.xhtml" />
+
+				<h:panelGrid>
+					<h:panelGroup>
+						<p:commandButton id="commandButtonDelete"
+							action="#{detailManagedBean.doDeleteAction}"
+							value="#{resources.commandButtonDelete}"
+							rendered="#{menuManagedBean.isGrant('detail','delete')}"
+							immediate="true" ajax="false" accesskey="b" />
+						<p:commandButton id="commandButtonDoSaveUpdate"
+							action="#{detailManagedBean.doSaveUpdateAction}"
+							value="#{resources.commandButtonSave}" ajax="false" accesskey="s" />
+						<p:commandButton id="commandButtonDoCancelUpdate"
+							action="#{detailManagedBean.doCancelUpdateAction}"
+							value="#{resources.commandButtonCancel}" immediate="true"
+							ajax="false" accesskey="r" />
+					</h:panelGroup>
+				</h:panelGrid>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</body>
+</html>

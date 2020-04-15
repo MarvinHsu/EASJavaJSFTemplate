@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<body>
+	<ui:composition template="/template/backOfficeTemplate.xhtml">
+		<ui:define name="head">
+			<title>#{resources.com_hsuforum_eastjavatemplate_entity_Many1}</title>
+		</ui:define>
+		<ui:define name="main">
+			<h:form id="createForm">
+				<h1>#{resources.com_hsuforum_eastjavatemplate_entity_Many1}-#{resources.create}</h1>
+				<p:growl id="growl" />
+
+
+				<ui:include page="inMany1Editor.xhtml" />
+
+				<h:panelGrid>
+					<h:panelGroup>
+						<p:commandButton id="commandButtonDoSaveCreate"
+							action="#{many1ManagedBean.doSaveCreateAction}"
+							value="#{resources.commandButtonSave}" accesskey="s" ajax="false" />
+						<p:commandButton id="commandButtonDoCancelCreate"
+							action="#{many1ManagedBean.doCancelCreateAction}"
+							value="#{resources.commandButtonCancel}" immediate="true"
+							accesskey="r" ajax="false" />
+					</h:panelGroup>
+				</h:panelGrid>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</body>
+</html>

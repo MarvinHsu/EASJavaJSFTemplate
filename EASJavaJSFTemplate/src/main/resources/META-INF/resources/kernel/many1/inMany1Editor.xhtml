@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:p="http://primefaces.org/ui">
+<p:panel>
+	<p:panelGrid columns="2">
+
+		<h:outputText
+			value="#{resources.com_hsuforum_eastjavatemplate_entity_Many1_id}" />
+		<p:inputText value="#{many1ManagedBean.updatingData.entity.id}"
+			label="#{resources.com_hsuforum_eastjavatemplate_entity_Many1_id}"
+			readOnly="true" />
+
+
+		<h:outputText
+			value="#{resources.com_hsuforum_eastjavatemplate_entity_Many1_name}" />
+		<p:inputText id="inputTextName"
+			value="#{many1ManagedBean.updatingData.entity.name}"
+			label="#{resources.com_hsuforum_eastjavatemplate_entity_Many1_name}"
+			required="true" />
+
+
+		<h:outputText
+			value="#{resources.com_hsuforum_eastjavatemplate_entity_Many1_code}" />
+		<p:inputText id="inputTextCode"
+			value="#{many1ManagedBean.updatingData.entity.code}"
+			label="#{resources.com_hsuforum_eastjavatemplate_entity_Many1_code}"
+			required="true" />
+
+
+
+	</p:panelGrid>
+</p:panel>
+
+<p />
+<p:panel
+	header="#{resources.com_hsuforum_eastjavatemplate_entity_Many1_many2s}">
+	<!--Many-to-Many多為checkbox的應用所以先預設兩個欄位id、name。撰寫實可依需求調整-->
+	<p:dataTable id="dataTableMany2"
+		value="#{many1ManagedBean.updatingData.many2List}" var="many"
+		selection="#{many1ManagedBean.updatingData.many2SelectedRowKeys}"
+		rowKey="#{many.id}">
+		<p:column selectionMode="multiple"
+			style="width:16px;text-align:center" />
+		<p:column id="columnId"
+			headerText="#{resources.com_hsuforum_eastjavatemplate_entity_Many2_id}">
+
+			<h:outputLabel value="#{many.id}" />
+
+		</p:column>
+		<p:column id="columnName"
+			headerText="#{resources.com_hsuforum_eastjavatemplate_entity_Many2_name}">
+
+			<h:outputLabel value="#{many.name}" />
+
+		</p:column>
+
+	</p:dataTable>
+</p:panel>
+
+</html>

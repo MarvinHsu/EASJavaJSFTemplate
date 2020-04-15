@@ -1,0 +1,29 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	<h:form id="menuForm">
+		<p:accordionPanel activeIndex="#{menuManagedBean.activeTab}">
+			<p:ajax event="tabChange" listener="#{menuManagedBean.onTabChange}"  />
+			<c:forEach var="module" items="#{menuManagedBean.moduleWSVO2s}">
+				<p:tab title="#{module.name}" rendered="#{module.showed}">
+					<c:forEach var="function" items="#{module.functionWSVO2s}">
+						<h:panelGrid rendered="#{function.showed}">
+							<p:commandLink action="#{function.getOutcome}"
+								value="#{function.name}" immediate="true"
+								rendered="#{function.showed}" ajax="false"
+								actionListener="#{menuManagedBean.navigationListener}">
+								<f:attribute name="functionCode" value="#{function.code}" />
+
+							</p:commandLink>
+						</h:panelGrid>
+					</c:forEach>
+
+				</p:tab>
+
+			</c:forEach>
+		</p:accordionPanel>
+	</h:form>
+</ui:composition>

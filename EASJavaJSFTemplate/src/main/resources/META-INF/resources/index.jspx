@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1">
+    <jsp:scriptlet>
+        response.sendRedirect(request.getContextPath() + "/kernel/default.jsf");
+    </jsp:scriptlet>
+</jsp:root>
