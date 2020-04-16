@@ -229,7 +229,7 @@
 		</dependencies>
 	</dependencyManagement>
 	<build>
-		<finalName>EAS</finalName>
+		<finalName>EASJavaJSFTemplate</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
