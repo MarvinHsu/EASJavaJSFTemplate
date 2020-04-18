@@ -29,6 +29,7 @@ public class PortalClient {
     	try{
     		userWSVO = target.request(MediaType.APPLICATION_JSON).get(UserWSVO.class);
     	}catch(Exception e) {
+    		e.printStackTrace();
     		userWSVO = null;
     	}
     	
@@ -48,6 +49,7 @@ public class PortalClient {
     	try{
     		moduleWSVO2s = target.request(MediaType.APPLICATION_JSON).get(ModuleWSVO2[].class);
     	}catch(Exception e) {
+    		e.printStackTrace();
     		moduleWSVO2s = null;
     	}
     	
