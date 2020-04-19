@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
+	version="2.1">
+	<application>
+		<el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
+
+		<resource-bundle>
+			<base-name>applicationResources</base-name>
+			<var>resources</var>
+		</resource-bundle>
+		<resource-bundle>
+			<base-name>messages</base-name>
+			<var>messages</var>
+		</resource-bundle>
+		<resource-bundle>
+			<base-name>system</base-name>
+			<var>system</var>
+		</resource-bundle>
+		<locale-config>
+			<default-locale>zh_TW</default-locale>
+			<supported-locale>en</supported-locale>
+			<supported-locale>zh_CN</supported-locale>
+		</locale-config>
+	</application>
+
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>home</from-outcome>
+			<to-view-id>/kernel/default.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+
+
+		<navigation-case>
+			<from-outcome>index</from-outcome>
+			<to-view-id>/kernel/default.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>master</from-outcome>
+			<to-view-id>/kernel/master/readMaster.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>detail</from-outcome>
+			<to-view-id>/kernel/detail/readDetail.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>many1</from-outcome>
+			<to-view-id>/kernel/many1/readMany1.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>backOffice</from-outcome>
+			<to-view-id>/default.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+
+
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/kernel/master/readMaster.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>create</from-outcome>
+			<to-view-id>/kernel/master/createMaster.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>update</from-outcome>
+			<to-view-id>/kernel/master/updateMaster.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/kernel/master/createMaster.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>read</from-outcome>
+			<to-view-id>/kernel/master/readMaster.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>updateDetail</from-outcome>
+			<to-view-id>/kernel/master/detail/updateDetail.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>createDetail</from-outcome>
+			<to-view-id>/kernel/master/detail/createDetail.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/kernel/master/updateMaster.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>read</from-outcome>
+			<to-view-id>/kernel/master/readMaster.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>updateDetail</from-outcome>
+			<to-view-id>/kernel/master/detail/updateDetail.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>createDetail</from-outcome>
+			<to-view-id>/kernel/master/detail/createDetail.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/kernel/master/detail/updateDetail.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>readCreate</from-outcome>
+			<to-view-id>/kernel/master/createMaster.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>readUpdate</from-outcome>
+			<to-view-id>/kernel/master/updateMaster.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/kernel/master/detail/createDetail.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>readCreate</from-outcome>
+			<to-view-id>/kernel/master/createMaster.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>readUpdate</from-outcome>
+			<to-view-id>/kernel/master/updateMaster.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/kernel/detail/readDetail.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>create</from-outcome>
+			<to-view-id>/kernel/detail/createDetail.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>update</from-outcome>
+			<to-view-id>/kernel/detail/updateDetail.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/kernel/detail/createDetail.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>read</from-outcome>
+			<to-view-id>/kernel/detail/readDetail.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/kernel/detail/updateDetail.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>read</from-outcome>
+			<to-view-id>/kernel/detail/readDetail.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/kernel/many1/readMany1.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>create</from-outcome>
+			<to-view-id>/kernel/many1/createMany1.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>update</from-outcome>
+			<to-view-id>/kernel/many1/updateMany1.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/kernel/many1/createMany1.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>read</from-outcome>
+			<to-view-id>/kernel/many1/readMany1.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/kernel/many1/updateMany1.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>read</from-outcome>
+			<to-view-id>/kernel/many1/readMany1.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- codegen end -->
+</faces-config>
