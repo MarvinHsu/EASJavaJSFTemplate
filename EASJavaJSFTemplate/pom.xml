@@ -595,7 +595,7 @@
 		<profile>
 			<id>jetty-mysql</id>
 			<properties>
-				<spring.profiles.active>jetty</spring.profiles.active>
+				<spring.profiles.active>jetty-mysql</spring.profiles.active>
 			</properties>
 			<dependencies>
 				<dependency>
