@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.hsuforum.EASJavaJSFTemplate</groupId>
 	<artifactId>EASJavaJSFTemplate</artifactId>
-	<version>2.0.1</version>
+	<version>2.0.2</version>
 	<packaging>jar</packaging>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -15,7 +15,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<joinfaces.version>4.3.0</joinfaces.version>
-		<hsucommon.version>3.0.7</hsucommon.version>
+		<hsucommon.version>3.0.8</hsucommon.version>
 		<java.version>11</java.version>
 		<appRoot>/Application/EASJavaJSFTemplate</appRoot>
 		<systemUrl>https://localhost:6443</systemUrl>
@@ -142,12 +142,7 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>net.sourceforge.htmlcleaner</groupId>
-			<artifactId>htmlcleaner</artifactId>
-			<version>2.10</version>
-			<type>jar</type>
-		</dependency>
+		
 		<dependency>
 			<groupId>org.owasp.esapi</groupId>
 			<artifactId>esapi</artifactId>
