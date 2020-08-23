@@ -399,17 +399,6 @@
 			</properties>
 			<dependencies>
 				<dependency>
-					<groupId>org.jboss.resteasy</groupId>
-					<artifactId>resteasy-spring-boot-starter</artifactId>
-					<version>4.5.1.Final</version>
-					<exclusions>
-						<exclusion>
-							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-starter-logging</artifactId>
-						</exclusion>
-					</exclusions>
-				</dependency>
-				<dependency>
 					<groupId>com.ibm.db2</groupId>
 					<artifactId>jcc</artifactId>
 				</dependency>
@@ -425,17 +414,6 @@
 			</properties>
 			<dependencies>
 				<dependency>
-					<groupId>org.jboss.resteasy</groupId>
-					<artifactId>resteasy-spring-boot-starter</artifactId>
-					<version>4.5.1.Final</version>
-					<exclusions>
-						<exclusion>
-							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-starter-logging</artifactId>
-						</exclusion>
-					</exclusions>
-				</dependency>
-				<dependency>
 					<groupId>mysql</groupId>
 					<artifactId>mysql-connector-java</artifactId>
 				</dependency>
@@ -447,17 +425,6 @@
 				<spring.profiles.active>tomcat-oracle</spring.profiles.active>
 			</properties>
 			<dependencies>
-				<dependency>
-					<groupId>org.jboss.resteasy</groupId>
-					<artifactId>resteasy-spring-boot-starter</artifactId>
-					<version>4.5.1.Final</version>
-					<exclusions>
-						<exclusion>
-							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-starter-logging</artifactId>
-						</exclusion>
-					</exclusions>
-				</dependency>
 				<dependency>
 					<groupId>com.oracle.jdbc</groupId>
 					<artifactId>ojdbc10</artifactId>
@@ -472,17 +439,6 @@
 			</properties>
 			<dependencies>
 				<dependency>
-					<groupId>org.jboss.resteasy</groupId>
-					<artifactId>resteasy-spring-boot-starter</artifactId>
-					<version>4.5.1.Final</version>
-					<exclusions>
-						<exclusion>
-							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-starter-logging</artifactId>
-						</exclusion>
-					</exclusions>
-				</dependency>
-				<dependency>
 					<groupId>org.postgresql</groupId>
 					<artifactId>postgresql</artifactId>
 					<version>42.2.12</version>
@@ -495,17 +451,6 @@
 				<spring.profiles.active>tomcat-sqlserver</spring.profiles.active>
 			</properties>
 			<dependencies>
-				<dependency>
-					<groupId>org.jboss.resteasy</groupId>
-					<artifactId>resteasy-spring-boot-starter</artifactId>
-					<version>4.5.1.Final</version>
-					<exclusions>
-						<exclusion>
-							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-starter-logging</artifactId>
-						</exclusion>
-					</exclusions>
-				</dependency>
 				<dependency>
 					<groupId>com.microsoft.sqlserver</groupId>
 					<artifactId>mssql-jdbc</artifactId>
@@ -541,21 +486,6 @@
 				<dependency>
 					<groupId>org.springframework.boot</groupId>
 					<artifactId>spring-boot-starter-web</artifactId>
-					<exclusions>
-						<exclusion>
-							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-starter-logging</artifactId>
-						</exclusion>
-						<exclusion>
-							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-starter-tomcat</artifactId>
-						</exclusion>
-					</exclusions>
-				</dependency>
-				<dependency>
-					<groupId>org.jboss.resteasy</groupId>
-					<artifactId>resteasy-spring-boot-starter</artifactId>
-					<version>4.5.1.Final</version>
 					<exclusions>
 						<exclusion>
 							<groupId>org.springframework.boot</groupId>
@@ -627,21 +557,6 @@
 					</exclusions>
 				</dependency>
 				<dependency>
-					<groupId>org.jboss.resteasy</groupId>
-					<artifactId>resteasy-spring-boot-starter</artifactId>
-					<version>4.5.1.Final</version>
-					<exclusions>
-						<exclusion>
-							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-starter-logging</artifactId>
-						</exclusion>
-						<exclusion>
-							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-starter-tomcat</artifactId>
-						</exclusion>
-					</exclusions>
-				</dependency>
-				<dependency>
 					<groupId>org.springframework.boot</groupId>
 					<artifactId>spring-boot-starter-jetty</artifactId>
 				</dependency>
@@ -689,21 +604,6 @@
 				<dependency>
 					<groupId>org.springframework.boot</groupId>
 					<artifactId>spring-boot-starter-web</artifactId>
-					<exclusions>
-						<exclusion>
-							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-starter-logging</artifactId>
-						</exclusion>
-						<exclusion>
-							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-starter-tomcat</artifactId>
-						</exclusion>
-					</exclusions>
-				</dependency>
-				<dependency>
-					<groupId>org.jboss.resteasy</groupId>
-					<artifactId>resteasy-spring-boot-starter</artifactId>
-					<version>4.5.1.Final</version>
 					<exclusions>
 						<exclusion>
 							<groupId>org.springframework.boot</groupId>
@@ -776,21 +676,6 @@
 					</exclusions>
 				</dependency>
 				<dependency>
-					<groupId>org.jboss.resteasy</groupId>
-					<artifactId>resteasy-spring-boot-starter</artifactId>
-					<version>4.5.1.Final</version>
-					<exclusions>
-						<exclusion>
-							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-starter-logging</artifactId>
-						</exclusion>
-						<exclusion>
-							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-starter-tomcat</artifactId>
-						</exclusion>
-					</exclusions>
-				</dependency>
-				<dependency>
 					<groupId>org.springframework.boot</groupId>
 					<artifactId>spring-boot-starter-jetty</artifactId>
 				</dependency>
@@ -839,21 +724,6 @@
 				<dependency>
 					<groupId>org.springframework.boot</groupId>
 					<artifactId>spring-boot-starter-web</artifactId>
-					<exclusions>
-						<exclusion>
-							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-starter-logging</artifactId>
-						</exclusion>
-						<exclusion>
-							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-starter-tomcat</artifactId>
-						</exclusion>
-					</exclusions>
-				</dependency>
-				<dependency>
-					<groupId>org.jboss.resteasy</groupId>
-					<artifactId>resteasy-spring-boot-starter</artifactId>
-					<version>4.5.1.Final</version>
 					<exclusions>
 						<exclusion>
 							<groupId>org.springframework.boot</groupId>

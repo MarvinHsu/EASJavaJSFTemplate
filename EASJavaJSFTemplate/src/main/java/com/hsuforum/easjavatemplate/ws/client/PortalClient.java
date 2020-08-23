@@ -1,13 +1,15 @@
 package com.hsuforum.easjavatemplate.ws.client;
 
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.client.Invocation;
-import javax.ws.rs.client.WebTarget;
-import javax.ws.rs.core.MediaType;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.RestTemplate;
 
 import com.hsuforum.easjavatemplate.ws.vo.ModuleWSVO2;
 import com.hsuforum.easjavatemplate.ws.vo.UserWSVO;
+
+
 /**
  * Get user info from portal 
  * Rest WS Client
@@ -20,20 +22,20 @@ public class PortalClient {
 	
 	public UserWSVO findUserById(String systemCode, String account){
 		
-		Client client = ClientBuilder.newClient();
+
+		UserWSVO userWSVO;
     	
-    	WebTarget target= client.target(this.getPortalWSURI()).path("userResource");
+    	final HttpHeaders headers = new HttpHeaders();
+        headers.set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36");
     	
-    	target=target.queryParam("systemCode", systemCode);
-    	target=target.queryParam("account", account);
+        final HttpEntity<String> entity = new HttpEntity<String>(headers);
     	
-    	Invocation.Builder builder = target
-    			.request(MediaType.APPLICATION_JSON)
-    			.accept(MediaType.APPLICATION_JSON)
-    			.header("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36");
-    	UserWSVO userWSVO;
+        String targetUri=this.getPortalWSURI()+"/userResource?systemCode={systemCode}&account={account}";
+    	RestTemplate restTemplate = new RestTemplate();
+    	
     	try{
-    		userWSVO=builder.get(UserWSVO.class);
+    		ResponseEntity<UserWSVO> userWSVOResponseEntity=restTemplate.exchange(targetUri, HttpMethod.GET,entity,UserWSVO.class, systemCode, account);
+    		userWSVO=userWSVOResponseEntity.getBody();
     	}catch(Exception e) {
     		e.printStackTrace();
     		userWSVO = null;
@@ -45,18 +47,21 @@ public class PortalClient {
 	
 	public ModuleWSVO2[] findModuleBySystem(String systemCode){
 
-		Client client = ClientBuilder.newClient();
+    	final HttpHeaders headers = new HttpHeaders();
+        headers.set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36");
     	
-    	WebTarget target= client.target(this.getPortalWSURI()).path("moduleResource");
+        final HttpEntity<String> entity = new HttpEntity<String>(headers);
     	
-    	target=target.queryParam("systemCode", systemCode);
-    	Invocation.Builder builder = target
-    			.request(MediaType.APPLICATION_JSON)
-    			.accept(MediaType.APPLICATION_JSON)
-    			.header("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36");
+        String targetUri=this.getPortalWSURI()+"/moduleResource?systemCode={systemCode}";
+    	RestTemplate restTemplate = new RestTemplate();
+    	
+    	
     	ModuleWSVO2[] moduleWSVO2s;
     	try{
-    		moduleWSVO2s = builder.get(ModuleWSVO2[].class);
+    		
+    		ResponseEntity<ModuleWSVO2[]> userWSVOResponseEntity=restTemplate.exchange(targetUri, HttpMethod.GET,entity,ModuleWSVO2[].class, systemCode);
+    		moduleWSVO2s=userWSVOResponseEntity.getBody();
+    		
     	}catch(Exception e) {
     		e.printStackTrace();
     		moduleWSVO2s = null;

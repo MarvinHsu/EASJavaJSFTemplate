@@ -11,6 +11,7 @@ import java.util.UUID;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedProperty;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.SessionScope;
 
@@ -36,14 +37,14 @@ public class Master_DetailManagedBean
 
 	private static final long serialVersionUID = 1L;
 
-	@ManagedProperty(value = "#{masterManagedBean}")
+	@Autowired
 	private MasterManagedBean masterManagedBean;
 
 	// Main serive in managedBean
-	@ManagedProperty(value = "#{detailService}")
+	@Autowired
 	private DetailService service;
 	// Main serive in managedBean
-	@ManagedProperty(value = "#{detailJpaService}")
+	@Autowired
 	private DetailJpaService jpaService;
 
 	/**
@@ -264,9 +265,9 @@ public class Master_DetailManagedBean
 	/**
 	 * @see com.hsuforum.common.web.jsf.managedbean.impl.TemplatePrimeJpaDataTableManagedBean#doUpdateAction()
 	 */
-	public String doUpdateAction() {
+	public String doUpdateAction(Detail detail) {
 		// call parent method
-		super.doUpdateAction();
+		super.doUpdateAction(detail);
 		return "updateDetail";
 	}
 
