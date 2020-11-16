@@ -139,19 +139,14 @@
 			<version>1.86.0</version>
 		</dependency>
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
+			<groupId>jakarta.servlet.jsp.jstl</groupId>
+			<artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
 		</dependency>
-		
 		<dependency>
 			<groupId>org.owasp.esapi</groupId>
 			<artifactId>esapi</artifactId>
 			<version>2.1.0.1</version>
 			<exclusions>
-				<exclusion>
-					<groupId>commons-beanutils</groupId>
-					<artifactId>commons-beanutils-core</artifactId>
-				</exclusion>
 				<exclusion>
 					<groupId>xalan</groupId>
 					<artifactId>xalan</artifactId>
@@ -163,14 +158,6 @@
 				<exclusion>
 					<groupId>xml-apis</groupId>
 					<artifactId>xml-apis</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>xml-apis</groupId>
-					<artifactId>xml-apis-ext</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>log4j</groupId>
-					<artifactId>log4j</artifactId>
 				</exclusion>
 			</exclusions>
 		</dependency>
