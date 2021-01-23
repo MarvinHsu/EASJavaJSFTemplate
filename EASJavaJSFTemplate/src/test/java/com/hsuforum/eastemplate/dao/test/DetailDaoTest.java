@@ -1,11 +1,13 @@
 package com.hsuforum.eastemplate.dao.test;
 
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.hsuforum.easjavatemplate.dao.DetailDao;
 import com.hsuforum.easjavatemplate.entity.Detail;
@@ -15,7 +17,7 @@ import com.hsuforum.easjavatemplate.entity.Detail;
  * @author Marvin
  *
  */
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @SpringBootTest
 public class DetailDaoTest {
 	
@@ -30,7 +32,7 @@ public class DetailDaoTest {
 		testingObj.setId("Input pk");
 		dao.create(testingObj);
 		
-		Assert.assertNotEquals(testingObj.getId(), null);
+		assertNotEquals(testingObj.getId(), null);
 	}
 
 	@Test
@@ -38,7 +40,7 @@ public class DetailDaoTest {
 	
 		Detail testingObj = dao.findByPK("Input pk");
 		
-		Assert.assertEquals(testingObj.getId(),"Input pk");
+		assertEquals(testingObj.getId(),"Input pk");
 	}
 	
 	@Test
@@ -48,7 +50,7 @@ public class DetailDaoTest {
 		testingObj.setName("test2");
 		dao.update(testingObj);
 		
-		Assert.assertEquals(testingObj.getName(), "test2");
+		assertEquals(testingObj.getName(), "test2");
 	}
 	
 	@Test
@@ -57,6 +59,6 @@ public class DetailDaoTest {
 		Detail testingObj = dao.findByPK("Input pk");	
 		dao.delete(testingObj);
 		Detail testingObj2 = dao.findByPK("Input pk");
-		Assert.assertEquals(testingObj2, null);
+		assertEquals(testingObj2, null);
 	}	
 }

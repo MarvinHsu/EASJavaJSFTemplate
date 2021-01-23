@@ -1,11 +1,13 @@
 package com.hsuforum.eastemplate.service.test;
 
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.hsuforum.easjavatemplate.entity.Master;
 import com.hsuforum.easjavatemplate.service.MasterService;
@@ -15,7 +17,7 @@ import com.hsuforum.easjavatemplate.service.MasterService;
  * @author Marvin
  *
  */
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @SpringBootTest
 public class MasterServiceTest {
 	
@@ -30,7 +32,7 @@ public class MasterServiceTest {
 		testingObj.setId("Input pk");
 		service.create(testingObj);
 		
-		Assert.assertNotEquals(testingObj.getId(), null);;
+		assertNotEquals(testingObj.getId(), null);;
 	}
 	
 	@Test
@@ -38,7 +40,7 @@ public class MasterServiceTest {
 	
 		Master testingObj = service.findByPK("Input pk");
 		
-		Assert.assertEquals(testingObj.getId(),"Input pk");
+		assertEquals(testingObj.getId(),"Input pk");
 	}
 	
 	@Test
@@ -49,7 +51,7 @@ public class MasterServiceTest {
 		testingObj.setName("test2");
 		service.update(testingObj);
 		
-		Assert.assertEquals(testingObj.getName(), "test2");
+		assertEquals(testingObj.getName(), "test2");
 	}
 	
 	@Test
@@ -59,6 +61,6 @@ public class MasterServiceTest {
 		Master testingObj = service.findByPK("Input pk");	
 		service.delete(testingObj);
 		Master testingObj2 = service.findByPK("Input pk");
-		Assert.assertEquals(testingObj2, null);
+		assertEquals(testingObj2, null);
 	}	
 }
