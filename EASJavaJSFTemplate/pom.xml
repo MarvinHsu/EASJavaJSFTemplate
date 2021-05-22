@@ -129,6 +129,14 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjtools</artifactId>
+		</dependency>		
+		<dependency>
 			<groupId>org.jasig.cas.client</groupId>
 			<artifactId>cas-client-support-springboot</artifactId>
 			<version>3.6.1</version>
@@ -219,38 +227,7 @@
 	</dependencyManagement>
 	<build>
 		<finalName>EASJavaJSFTemplate</finalName>
-		<sourceDirectory>target/generated-sources/delombok</sourceDirectory>
-		<testSourceDirectory>target/generated-test-sources/delombok</testSourceDirectory>
 		<plugins>
-			<plugin>
-				<groupId>org.projectlombok</groupId>
-				<artifactId>lombok-maven-plugin</artifactId>
-				<version>1.18.20.0</version>
-				<executions>
-					<execution>
-						<id>delombok</id>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>delombok</goal>
-						</goals>
-						<configuration>
-							<addOutputDirectory>false</addOutputDirectory>
-							<sourceDirectory>src/main/java</sourceDirectory>
-						</configuration>
-					</execution>
-					<execution>
-						<id>test-delombok</id>
-						<phase>generate-test-sources</phase>
-						<goals>
-							<goal>testDelombok</goal>
-						</goals>
-						<configuration>
-							<addOutputDirectory>false</addOutputDirectory>
-							<sourceDirectory>src/test/java</sourceDirectory>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -258,6 +235,17 @@
 					<source>${java.version}</source>
 					<target>${java.version}</target>
 				</configuration>
+				<executions>
+					<execution>
+						<id>default-compile</id>
+						<configuration>
+							<compilerArgs>
+								<arg>-d</arg>
+								<arg>${project.build.directory}/unwoven-classes</arg>
+							</compilerArgs>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -276,15 +264,20 @@
 			<plugin>
 				<groupId>com.nickwongdev</groupId>
 				<artifactId>aspectj-maven-plugin</artifactId>
-				<version>1.12.1</version>
+				<version>1.12.6</version>
 				<configuration>
 					<complianceLevel>${java.version}</complianceLevel>
 					<source>${java.version}</source>
 					<target>${java.version}</target>
+					<forceAjcCompile>true</forceAjcCompile>
+					<complianceLevel>${java.version}</complianceLevel>
+					<sources />
+					<weaveDirectories>
+						<weaveDirectory>${project.build.directory}/unwoven-classes</weaveDirectory>
+					</weaveDirectories>
 				</configuration>
 				<executions>
 					<execution>
-
 						<goals>
 							<goal>compile</goal>
 							<goal>test-compile</goal>
