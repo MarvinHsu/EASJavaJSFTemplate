@@ -1,7 +1,6 @@
 package com.hsuforum.easjavatemplate.ws.vo;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

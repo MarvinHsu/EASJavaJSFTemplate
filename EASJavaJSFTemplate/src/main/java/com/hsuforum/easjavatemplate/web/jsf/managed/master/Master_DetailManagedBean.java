@@ -9,7 +9,6 @@ import java.util.Set;
 import java.util.UUID;
 
 import javax.annotation.PostConstruct;
-import javax.faces.bean.ManagedProperty;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
