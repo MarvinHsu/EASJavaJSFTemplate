@@ -25,42 +25,10 @@ public class MasterServiceTest {
 	MasterService service;
 	
 	@Test
-	public void testCreate() {
-		Master testingObj = new Master();
-
-		// TODO Input PK
-		testingObj.setId("Input pk");
-		service.create(testingObj);
-		
-		assertNotEquals(testingObj.getId(), null);;
-	}
-	
-	@Test
 	public void testRead() {
 	
 		Master testingObj = service.findByPK("Input pk");
 		
 		assertEquals(testingObj.getId(),"Input pk");
 	}
-	
-	@Test
-	public void testUpdate() {	
-		
-		// TODO update at least a field
-		Master testingObj = service.findByPK("Input pk");
-		testingObj.setName("test2");
-		service.update(testingObj);
-		
-		assertEquals(testingObj.getName(), "test2");
-	}
-	
-	@Test
-	public void testDelete() {
-		
-		// TODO Input PK	
-		Master testingObj = service.findByPK("Input pk");	
-		service.delete(testingObj);
-		Master testingObj2 = service.findByPK("Input pk");
-		assertEquals(testingObj2, null);
-	}	
 }

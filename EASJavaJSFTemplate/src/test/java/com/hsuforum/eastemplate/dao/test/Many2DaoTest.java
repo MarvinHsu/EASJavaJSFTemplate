@@ -24,16 +24,6 @@ public class Many2DaoTest {
 	@Autowired
 	Many2Dao dao ;
 	
-	@Test
-	public void testCreate() {
-		Many2 testingObj = new Many2();
-
-		// TODO Input PK
-		testingObj.setId("Input pk");
-		dao.create(testingObj);
-		
-		assertNotEquals(testingObj.getId(), null);
-	}
 
 	@Test
 	public void testRead() {
@@ -42,23 +32,5 @@ public class Many2DaoTest {
 		
 		assertEquals(testingObj.getId(),"Input pk");
 	}
-	
-	@Test
-	public void testUpdate() {	
-		// TODO update at least a field
-		Many2 testingObj = dao.findByPK("Input pk");
-		testingObj.setName("test2");
-		dao.update(testingObj);
-		
-		assertEquals(testingObj.getName(), "test2");
-	}
-	
-	@Test
-	public void testDelete() {	
-		// TODO Input PK
-		Many2 testingObj = dao.findByPK("Input pk");	
-		dao.delete(testingObj);
-		Many2 testingObj2 = dao.findByPK("Input pk");
-		assertEquals(testingObj2, null);
-	}	
+
 }

@@ -25,42 +25,11 @@ public class Many2ServiceTest {
 	Many2Service service;
 	
 	@Test
-	public void testCreate() {
-		Many2 testingObj = new Many2();
-
-		// TODO Input PK
-		testingObj.setId("Input pk");
-		service.create(testingObj);
-		
-		assertNotEquals(testingObj.getId(), null);;
-	}
-	
-	@Test
 	public void testRead() {
 	
 		Many2 testingObj = service.findByPK("Input pk");
 		
 		assertEquals(testingObj.getId(),"Input pk");
 	}
-	
-	@Test
-	public void testUpdate() {	
-		
-		// TODO update at least a field
-		Many2 testingObj = service.findByPK("Input pk");
-		testingObj.setName("test2");
-		service.update(testingObj);
-		
-		assertEquals(testingObj.getName(), "test2");
-	}
-	
-	@Test
-	public void testDelete() {
-		
-		// TODO Input PK	
-		Many2 testingObj = service.findByPK("Input pk");	
-		service.delete(testingObj);
-		Many2 testingObj2 = service.findByPK("Input pk");
-		assertEquals(testingObj2, null);
-	}	
+
 }

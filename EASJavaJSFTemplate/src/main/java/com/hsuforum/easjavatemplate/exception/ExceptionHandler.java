@@ -20,7 +20,7 @@ public class ExceptionHandler {
 	protected final Log logger = LogFactory.getLog(this.getClass());
 
 
-	@Pointcut("execution(* com.hsuforum.eas.web.jsf.managed..*ManagedBean.do*Action(..))")
+	@Pointcut("execution(* com.hsuforum.easjavatemplate.web.jsf.managed..*ManagedBean.do*Action(..))")
 	public void doActionInWebLayer() {
 	}
 

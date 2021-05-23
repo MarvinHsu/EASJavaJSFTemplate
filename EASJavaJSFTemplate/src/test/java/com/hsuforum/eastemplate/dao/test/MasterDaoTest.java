@@ -23,17 +23,6 @@ public class MasterDaoTest {
 	
 	@Autowired
 	MasterDao dao ;
-	
-	@Test
-	public void testCreate() {
-		Master testingObj = new Master();
-
-		// TODO Input PK
-		testingObj.setId("Input pk");
-		dao.create(testingObj);
-		
-		assertNotEquals(testingObj.getId(), null);
-	}
 
 	@Test
 	public void testRead() {
@@ -42,23 +31,4 @@ public class MasterDaoTest {
 		
 		assertEquals(testingObj.getId(),"Input pk");
 	}
-	
-	@Test
-	public void testUpdate() {	
-		// TODO update at least a field
-		Master testingObj = dao.findByPK("Input pk");
-		testingObj.setName("test2");
-		dao.update(testingObj);
-		
-		assertEquals(testingObj.getName(), "test2");
-	}
-	
-	@Test
-	public void testDelete() {	
-		// TODO Input PK
-		Master testingObj = dao.findByPK("Input pk");	
-		dao.delete(testingObj);
-		Master testingObj2 = dao.findByPK("Input pk");
-		assertEquals(testingObj2, null);
-	}	
 }
