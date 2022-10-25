@@ -2,6 +2,8 @@ package com.hsuforum.easjavatemplate.web.config;
 
 import java.io.Serializable;
 
+import com.hsuforum.easjavatemplate.DefaultSetting;
+
 public class WSConfigBean implements Serializable {
 
 	private static final long serialVersionUID = 5913706553532111030L;
@@ -32,12 +34,12 @@ public class WSConfigBean implements Serializable {
 		return siteAccessToken;
 	}
 
-	public void setDataTableRows(Integer dataTableRows) {
-		this.dataTableRows = dataTableRows;
-	}
-
 	public Integer getDataTableRows() {
 		return dataTableRows;
+	}
+
+	public void setDataTableRows(Integer dataTableRows) {
+		this.dataTableRows = dataTableRows;
 	}
 
 	public void setMailFrom(String mailFrom) {

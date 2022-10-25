@@ -11,6 +11,7 @@ public class GroupFunctionWSVO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private FunctionWSVO functionWSVO;
 	private FunctionItemWSVO functionItemWSVO;
+	private GroupWSVO2 groupWSVO2;
 	
 	
 }

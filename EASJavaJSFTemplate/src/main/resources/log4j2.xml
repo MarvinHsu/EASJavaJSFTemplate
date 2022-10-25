@@ -31,11 +31,7 @@
 
 	</Appenders>
 	<Loggers>
-		<Logger name="org.springframework.security" level="info" additivity="false">
-            <AppenderRef ref="console" />
-			<AppenderRef ref="file" />
-        </Logger>
-        <Logger name="org.springframework.security" level="info" additivity="false">
+        <Logger name="org.springframework.security" level="debug" additivity="false">
             <AppenderRef ref="console" />
 			<AppenderRef ref="file" />
         </Logger>

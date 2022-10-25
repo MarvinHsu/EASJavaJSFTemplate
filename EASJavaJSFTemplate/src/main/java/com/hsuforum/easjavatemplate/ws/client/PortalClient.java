@@ -6,6 +6,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
+import com.hsuforum.easjavatemplate.ws.vo.GroupFunctionWSVO;
 import com.hsuforum.easjavatemplate.ws.vo.ModuleWSVO2;
 import com.hsuforum.easjavatemplate.ws.vo.UserWSVO;
 
@@ -59,8 +60,8 @@ public class PortalClient {
     	ModuleWSVO2[] moduleWSVO2s;
     	try{
     		
-    		ResponseEntity<ModuleWSVO2[]> userWSVOResponseEntity=restTemplate.exchange(targetUri, HttpMethod.GET,entity,ModuleWSVO2[].class, systemCode);
-    		moduleWSVO2s=userWSVOResponseEntity.getBody();
+    		ResponseEntity<ModuleWSVO2[]> moduleWSVOResponseEntity=restTemplate.exchange(targetUri, HttpMethod.GET,entity,ModuleWSVO2[].class, systemCode);
+    		moduleWSVO2s=moduleWSVOResponseEntity.getBody();
     		
     	}catch(Exception e) {
     		e.printStackTrace();
@@ -68,6 +69,31 @@ public class PortalClient {
     	}
     	
     	return moduleWSVO2s;
+    	
+	}
+	public GroupFunctionWSVO[] findGroupFunctionBySystem(String systemCode){
+
+    	final HttpHeaders headers = new HttpHeaders();
+        headers.set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36");
+    	
+        final HttpEntity<String> entity = new HttpEntity<String>(headers);
+    	
+        String targetUri=this.getPortalWSURI()+"/groupFunctionResource?systemCode={systemCode}";
+    	RestTemplate restTemplate = new RestTemplate();
+    	
+    	
+    	GroupFunctionWSVO[] groupFunctionWSVOs;
+    	try{
+    		
+    		ResponseEntity<GroupFunctionWSVO[]> groupFunctionWSVOResponseEntity=restTemplate.exchange(targetUri, HttpMethod.GET,entity,GroupFunctionWSVO[].class, systemCode);
+    		groupFunctionWSVOs=groupFunctionWSVOResponseEntity.getBody();
+    		
+    	}catch(Exception e) {
+    		e.printStackTrace();
+    		groupFunctionWSVOs = null;
+    	}
+    	
+    	return groupFunctionWSVOs;
     	
 	}
 	/**

@@ -8,12 +8,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
-public class GroupWSVO implements Serializable, GrantedAuthority {
+public class GroupWSVO2 implements Serializable, GrantedAuthority {
 	private static final long serialVersionUID = 1L;
 	private String id;
 	private String code;
 	private String name;
-	private GroupFunctionWSVO[] groupFunctionWSVOs;
 	private String authority;
 
 	
