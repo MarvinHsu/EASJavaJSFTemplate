@@ -12,17 +12,6 @@
        http://www.springframework.org/schema/tx https://www.springframework.org/schema/tx/spring-tx.xsd
        http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd ">
 
-    <!-- Portal WS Client -->
-	<bean id="portalClient" class="com.hsuforum.easjavatemplate.ws.client.PortalClient">
-		<property name="portalWSURI" value="@portalWSURI@" />
-	</bean>
-	<bean id="systemId" class="java.lang.String">
-		<constructor-arg type="java.lang.String" value="@systemId@" />
-	</bean>
-    <bean id="wsConfigBean"
-    	class="com.hsuforum.easjavatemplate.web.config.WSConfigBean" 
-    	p:dataTableRows="25" p:mailFrom="abc@abc.com"
-    	scope="singleton" />
 	
 
     <bean class="com.hsuforum.easjavatemplate.exception.ExceptionHandler"></bean>

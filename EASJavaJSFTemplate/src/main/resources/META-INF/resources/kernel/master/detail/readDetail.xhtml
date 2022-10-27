@@ -14,12 +14,12 @@
 <p />
 <p:dataTable id="dataTable" var="bo" paginator="true"
 	paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-	rows="#{defaultConfigManagedBean.rowsOfPerPage}"
-	rowsPerPageTemplate="#{defaultConfigManagedBean.rowsOfPerPage}"
+	rows="#{defaultSetting.dataTableRows}"
+	rowsPerPageTemplate="#{defaultSetting.rowsOfPerPage}"
 	value="#{master_DetailManagedBean.dataList}">
 
 	<p:column id="columnId" sortBy="#{bo.id}"
-		rendered="#{defaultConfigManagedBean.devMode}"
+		rendered="#{defaultSetting.devMode}"
 		headerText="#{resources.com_hsuforum_eastjavatemplate_entity_Detail_id}">
 
 		<h:outputText value="#{bo.id}"

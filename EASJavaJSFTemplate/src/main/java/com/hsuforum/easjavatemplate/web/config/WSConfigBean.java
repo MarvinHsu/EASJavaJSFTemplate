@@ -32,12 +32,12 @@ public class WSConfigBean implements Serializable {
 		return siteAccessToken;
 	}
 
-	public void setDataTableRows(Integer dataTableRows) {
-		this.dataTableRows = dataTableRows;
-	}
-
 	public Integer getDataTableRows() {
 		return dataTableRows;
+	}
+
+	public void setDataTableRows(Integer dataTableRows) {
+		this.dataTableRows = dataTableRows;
 	}
 
 	public void setMailFrom(String mailFrom) {
