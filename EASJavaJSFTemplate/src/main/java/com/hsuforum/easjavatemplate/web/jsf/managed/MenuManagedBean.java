@@ -2,8 +2,11 @@ package com.hsuforum.easjavatemplate.web.jsf.managed;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
+import java.util.Set;
 
 import javax.annotation.PostConstruct;
 import javax.faces.context.FacesContext;
@@ -11,14 +14,13 @@ import javax.faces.event.ActionEvent;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.jasig.cas.client.authentication.AttributePrincipal;
 import org.primefaces.component.accordionpanel.AccordionPanel;
 import org.primefaces.event.TabChangeEvent;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.SessionScope;
 
-import com.hsuforum.common.web.jsf.utils.JSFUtils;
 import com.hsuforum.easjavatemplate.DefaultSetting;
 import com.hsuforum.easjavatemplate.security.util.AAUtils;
 import com.hsuforum.easjavatemplate.ws.client.PortalClient;
@@ -76,32 +78,54 @@ public class MenuManagedBean implements Serializable {
 				if (this.moduleWSVO2s.size() > 0) {
 					this.activeTab = 0;
 				}
-				if (this.userWSVO != null && userWSVO.getGroupWSVOs() != null) {
+				if (this.userWSVO != null && userWSVO.getAuthorities() != null && this.moduleWSVO2s != null) {
 					
-					for (GroupWSVO groupWSVO : userWSVO.getGroupWSVOs()) {
-	
-						for (GroupFunctionWSVO groupFunctionWSVO : groupWSVO.getGroupFunctionWSVOs()) {
-							for (int i = 0; i < this.moduleWSVO2s.size(); i++) {
-								if (groupFunctionWSVO.getFunctionWSVO().getModuleWSVO() != null
-										&& groupFunctionWSVO.getFunctionWSVO().getModuleWSVO().getCode()
-												.equals(this.moduleWSVO2s.get(i).getCode())) {
-									this.moduleWSVO2s.get(i).setShowed(true);
-									FunctionWSVO2[] iter = this.moduleWSVO2s.get(i).getFunctionWSVO2s();
-									FunctionWSVO2[] functionWSVO2s = new FunctionWSVO2[iter.length];
-									for (int j = 0; j < iter.length; j++) {
-										FunctionWSVO2 functionWSVO2 = iter[j];
-										if (groupFunctionWSVO.getFunctionWSVO().getCode().equals(functionWSVO2.getCode())) {
-											functionWSVO2.setShowed(true);
+					for (int i = 0; i < this.moduleWSVO2s.size(); i++) {
+						if (this.moduleWSVO2s.get(i).getShowed() == true) {
+							//use set to prevent duplication
+							Set<FunctionWSVO2> functionWSVO2Set = new HashSet<FunctionWSVO2>();
+							for (GrantedAuthority grantedAuthority : userWSVO.getAuthorities()) {
+
+								for (GroupFunctionWSVO groupFunctionWSVO : ((GroupWSVO) grantedAuthority).getGroupFunctionWSVOs()) {
+
+									if (groupFunctionWSVO.getFunctionWSVO().getModuleWSVO() != null && groupFunctionWSVO.getFunctionWSVO()
+											.getModuleWSVO().getCode().equals(this.moduleWSVO2s.get(i).getCode())) {
+										FunctionWSVO2[] functionWSVO2Iter = this.moduleWSVO2s.get(i).getFunctionWSVO2s();
+
+										for(int j=0;j<functionWSVO2Iter.length;j++){
+											FunctionWSVO2 functionWSVO2 = functionWSVO2Iter[j];
+											if (groupFunctionWSVO.getFunctionWSVO().getCode().equals(functionWSVO2.getCode())
+													&& functionWSVO2.getShowed() == true) {
+												functionWSVO2Set.add(functionWSVO2);
+											}
 										}
-										functionWSVO2s[j] = functionWSVO2;
+
 									}
-									this.moduleWSVO2s.get(i).setFunctionWSVO2s(functionWSVO2s);
-	
+
 								}
-	
 							}
+							List<FunctionWSVO2> functionWSVO2ArrayList= new ArrayList<FunctionWSVO2>();
+							functionWSVO2ArrayList.addAll(functionWSVO2Set);
+
+							Collections.sort(functionWSVO2ArrayList, new Comparator<FunctionWSVO2>() {
+								public int compare(FunctionWSVO2 s1, FunctionWSVO2 s2) {
+
+									return s1.getSequence().compareTo(s2.getSequence());
+
+								}
+							});
+							FunctionWSVO2[] gunctionWSVOArray = new FunctionWSVO2[functionWSVO2ArrayList.size()];
+							functionWSVO2ArrayList.toArray(gunctionWSVOArray);
+
+							this.moduleWSVO2s.get(i).setFunctionWSVO2s(gunctionWSVOArray);
 						}
+						//if module haven't any function. hidden it
+						if(this.moduleWSVO2s.get(i).getShowed() == true && this.moduleWSVO2s.get(i).getFunctionWSVO2s().length==0) {
+							this.moduleWSVO2s.get(i).setShowed(false);
+						}
+
 					}
+				
 				}
 			}
         }else {

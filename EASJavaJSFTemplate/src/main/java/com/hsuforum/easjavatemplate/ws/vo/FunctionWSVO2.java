@@ -16,7 +16,7 @@ public class FunctionWSVO2 implements Serializable{
 	private String outcome;
 	
 	private Date updateDate;
-	private int sequence;
+	private Integer sequence;
 	private Boolean showed;
 	
 
