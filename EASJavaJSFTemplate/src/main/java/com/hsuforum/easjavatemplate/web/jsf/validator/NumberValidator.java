@@ -1,13 +1,13 @@
 package com.hsuforum.easjavatemplate.web.jsf.validator;
 
+import org.apache.commons.lang.math.NumberUtils;
+
 import jakarta.faces.application.FacesMessage;
 import jakarta.faces.component.UIComponent;
 import jakarta.faces.context.FacesContext;
 import jakarta.faces.validator.FacesValidator;
 import jakarta.faces.validator.Validator;
 import jakarta.faces.validator.ValidatorException;
-
-import org.apache.commons.lang.math.NumberUtils;
 
 /**
  * Number validator

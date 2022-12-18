@@ -2,14 +2,14 @@ package com.hsuforum.easjavatemplate.web.jsf.converter;
 
 import java.math.BigDecimal;
 
+import com.hsuforum.common.web.util.StringUtils;
+
 import jakarta.faces.component.UIComponent;
 import jakarta.faces.component.html.HtmlInputText;
 import jakarta.faces.context.FacesContext;
 import jakarta.faces.convert.Converter;
 import jakarta.faces.convert.ConverterException;
 import jakarta.faces.convert.FacesConverter;
-
-import com.hsuforum.common.web.util.StringUtils;
 
 /**
  * Float amount converter

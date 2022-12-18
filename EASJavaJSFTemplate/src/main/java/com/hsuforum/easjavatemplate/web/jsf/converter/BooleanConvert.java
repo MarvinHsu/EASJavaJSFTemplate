@@ -1,15 +1,15 @@
 package com.hsuforum.easjavatemplate.web.jsf.converter;
 
+import org.springframework.context.support.MessageSourceAccessor;
+
+import com.hsuforum.common.web.util.MessageUtils;
+import com.hsuforum.common.web.util.StringUtils;
+
 import jakarta.faces.component.UIComponent;
 import jakarta.faces.context.FacesContext;
 import jakarta.faces.convert.Converter;
 import jakarta.faces.convert.ConverterException;
 import jakarta.faces.convert.FacesConverter;
-
-import org.springframework.context.support.MessageSourceAccessor;
-
-import com.hsuforum.common.web.util.MessageUtils;
-import com.hsuforum.common.web.util.StringUtils;
 
 /**
  * Boolean converter

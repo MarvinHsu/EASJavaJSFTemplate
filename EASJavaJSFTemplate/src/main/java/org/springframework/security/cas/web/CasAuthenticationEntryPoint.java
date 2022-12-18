@@ -18,16 +18,15 @@ package org.springframework.security.cas.web;
 
 import java.io.IOException;
 
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-
 import org.apereo.cas.client.util.CommonUtils;
-
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.security.cas.ServiceProperties;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.util.Assert;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 /**
  * Used by the <code>ExceptionTranslationFilter</code> to commence authentication via the

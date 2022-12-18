@@ -18,17 +18,17 @@ package org.springframework.security.cas.jackson2;
 
 import java.util.Collection;
 
+import org.apereo.cas.client.validation.Assertion;
+import org.springframework.security.cas.authentication.CasAuthenticationProvider;
+import org.springframework.security.cas.authentication.CasAuthenticationToken;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import org.apereo.cas.client.validation.Assertion;
-
-import org.springframework.security.cas.authentication.CasAuthenticationProvider;
-import org.springframework.security.cas.authentication.CasAuthenticationToken;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 
 /**
  * Mixin class which helps in deserialize

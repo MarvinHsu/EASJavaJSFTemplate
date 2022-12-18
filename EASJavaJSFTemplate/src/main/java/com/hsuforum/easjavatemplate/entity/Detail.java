@@ -1,5 +1,7 @@
 package com.hsuforum.easjavatemplate.entity;
 
+import com.hsuforum.common.entity.impl.BaseEntityImpl;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -8,9 +10,6 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
-
-import com.hsuforum.common.entity.impl.BaseEntityImpl;
-
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;

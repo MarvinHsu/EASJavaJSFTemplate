@@ -18,12 +18,13 @@ package org.springframework.security.cas.jackson2;
 
 import java.util.Map;
 
+import org.apereo.cas.client.proxy.ProxyRetriever;
+
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import org.apereo.cas.client.proxy.ProxyRetriever;
 
 /**
  * Helps in deserialize {@link org.apereo.cas.client.authentication.AttributePrincipalImpl}

@@ -3,15 +3,14 @@ package com.hsuforum.easjavatemplate.entity;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+import com.hsuforum.common.entity.impl.BaseEntityImpl;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.NamedQuery;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-
-import com.hsuforum.common.entity.impl.BaseEntityImpl;
-
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;

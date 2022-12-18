@@ -19,12 +19,13 @@ package org.springframework.security.cas.jackson2;
 import java.util.Date;
 import java.util.Map;
 
+import org.apereo.cas.client.authentication.AttributePrincipal;
+
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import org.apereo.cas.client.authentication.AttributePrincipal;
 
 /**
  * Helps in jackson deserialization of class

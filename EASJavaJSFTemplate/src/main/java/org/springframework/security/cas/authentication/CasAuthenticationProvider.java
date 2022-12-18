@@ -21,7 +21,6 @@ import org.apache.commons.logging.LogFactory;
 import org.apereo.cas.client.validation.Assertion;
 import org.apereo.cas.client.validation.TicketValidationException;
 import org.apereo.cas.client.validation.TicketValidator;
-
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.MessageSource;
 import org.springframework.context.MessageSourceAware;

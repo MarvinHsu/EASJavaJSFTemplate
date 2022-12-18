@@ -6,9 +6,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.servlet.http.HttpSessionEvent;
-
 import org.apereo.cas.client.boot.configuration.EnableCasClient;
 import org.apereo.cas.client.session.SingleSignOutFilter;
 import org.apereo.cas.client.session.SingleSignOutHttpSessionListener;
@@ -51,7 +48,6 @@ import org.springframework.security.web.servletapi.SecurityContextHolderAwareReq
 import org.springframework.security.web.session.ConcurrentSessionFilter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionDefinition;
-import org.springframework.transaction.TransactionManager;
 import org.springframework.transaction.interceptor.NameMatchTransactionAttributeSource;
 import org.springframework.transaction.interceptor.RollbackRuleAttribute;
 import org.springframework.transaction.interceptor.RuleBasedTransactionAttribute;
@@ -61,9 +57,10 @@ import org.springframework.transaction.interceptor.TransactionInterceptor;
 import com.hsuforum.easjavatemplate.security.intercept.web.PortalFilterInvocationDefinitionSource;
 import com.hsuforum.easjavatemplate.security.userdetails.PortalUserDetailsService;
 import com.hsuforum.easjavatemplate.security.vote.UserVoter;
-import com.hsuforum.easjavatemplate.web.config.WSConfigBean;
 import com.hsuforum.easjavatemplate.ws.client.PortalClient;
-import com.hsuforum.easjavatemplate.DefaultSetting;
+
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.servlet.http.HttpSessionEvent;
 
 
 @EnableCasClient

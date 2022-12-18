@@ -5,8 +5,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-import jakarta.annotation.PostConstruct;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.SessionScope;
@@ -19,6 +17,8 @@ import com.hsuforum.easjavatemplate.service.MasterJpaService;
 import com.hsuforum.easjavatemplate.service.MasterService;
 import com.hsuforum.easjavatemplate.web.vo.MasterVo;
 import com.hsuforum.easjavatemplate.web.vowrapper.MasterVoWrapper;
+
+import jakarta.annotation.PostConstruct;
 
 /**
  * Master managedBean

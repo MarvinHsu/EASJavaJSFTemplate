@@ -20,11 +20,11 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.regex.Pattern;
 
-import jakarta.servlet.http.HttpServletRequest;
-
 import org.springframework.security.web.authentication.WebAuthenticationDetails;
 import org.springframework.security.web.util.UrlUtils;
 import org.springframework.util.Assert;
+
+import jakarta.servlet.http.HttpServletRequest;
 
 /**
  * A default implementation of {@link ServiceAuthenticationDetails} that figures out the

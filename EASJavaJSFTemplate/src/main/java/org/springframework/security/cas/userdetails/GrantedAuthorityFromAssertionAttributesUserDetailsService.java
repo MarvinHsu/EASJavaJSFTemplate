@@ -20,7 +20,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apereo.cas.client.validation.Assertion;
-
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;

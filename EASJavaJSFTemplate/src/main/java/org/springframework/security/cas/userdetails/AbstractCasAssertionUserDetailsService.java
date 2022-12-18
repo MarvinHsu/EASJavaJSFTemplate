@@ -17,7 +17,6 @@
 package org.springframework.security.cas.userdetails;
 
 import org.apereo.cas.client.validation.Assertion;
-
 import org.springframework.security.cas.authentication.CasAssertionAuthenticationToken;
 import org.springframework.security.core.userdetails.AuthenticationUserDetailsService;
 import org.springframework.security.core.userdetails.UserDetails;

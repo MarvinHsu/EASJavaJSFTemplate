@@ -16,13 +16,13 @@
 
 package org.springframework.security.cas.jackson2;
 
-import com.fasterxml.jackson.core.Version;
-import com.fasterxml.jackson.databind.module.SimpleModule;
 import org.apereo.cas.client.authentication.AttributePrincipalImpl;
 import org.apereo.cas.client.validation.AssertionImpl;
-
 import org.springframework.security.cas.authentication.CasAuthenticationToken;
 import org.springframework.security.jackson2.SecurityJackson2Modules;
+
+import com.fasterxml.jackson.core.Version;
+import com.fasterxml.jackson.databind.module.SimpleModule;
 
 /**
  * Jackson module for spring-security-cas. This module register
