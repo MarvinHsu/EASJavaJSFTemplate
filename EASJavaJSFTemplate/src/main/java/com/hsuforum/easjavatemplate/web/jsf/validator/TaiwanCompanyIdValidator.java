@@ -2,12 +2,12 @@ package com.hsuforum.easjavatemplate.web.jsf.validator;
 
 import java.util.regex.Pattern;
 
-import javax.faces.application.FacesMessage;
-import javax.faces.component.UIComponent;
-import javax.faces.context.FacesContext;
-import javax.faces.validator.FacesValidator;
-import javax.faces.validator.Validator;
-import javax.faces.validator.ValidatorException;
+import jakarta.faces.application.FacesMessage;
+import jakarta.faces.component.UIComponent;
+import jakarta.faces.context.FacesContext;
+import jakarta.faces.validator.FacesValidator;
+import jakarta.faces.validator.Validator;
+import jakarta.faces.validator.ValidatorException;
 
 import com.hsuforum.common.web.util.MessageUtils;
 import com.hsuforum.easjavatemplate.common.ErrorCode;

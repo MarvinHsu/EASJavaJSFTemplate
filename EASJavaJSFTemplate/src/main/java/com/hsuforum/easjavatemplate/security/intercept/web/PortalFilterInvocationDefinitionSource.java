@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -45,7 +45,7 @@ public class PortalFilterInvocationDefinitionSource implements FilterInvocationS
 	public void init() {
 		requestMap = new LinkedHashMap<RequestMatcher, Collection<ConfigAttribute>>();
 		GroupFunctionWSVO[] groupFunctionWSVOs = portalClient.findGroupFunctionBySystem(this.getDefaultSetting().getSystemId());
-
+		
 		for (GroupFunctionWSVO groupFunctionWSVO : groupFunctionWSVOs) {
 			List<ConfigAttribute> configAttributes = new ArrayList<ConfigAttribute>();
 			GroupWSVO2 groupWSVO2 = groupFunctionWSVO.getGroupWSVO2();

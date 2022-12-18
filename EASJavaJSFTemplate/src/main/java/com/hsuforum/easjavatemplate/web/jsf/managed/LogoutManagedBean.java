@@ -3,9 +3,9 @@ package com.hsuforum.easjavatemplate.web.jsf.managed;
 import java.io.IOException;
 import java.io.Serializable;
 
-import javax.faces.context.ExternalContext;
-import javax.faces.context.FacesContext;
-import javax.servlet.ServletException;
+import jakarta.faces.context.ExternalContext;
+import jakarta.faces.context.FacesContext;
+import jakarta.servlet.ServletException;
 /**
  * Logout managed bean
  * @author Marvin

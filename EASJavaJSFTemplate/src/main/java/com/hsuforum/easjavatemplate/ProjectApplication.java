@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @ComponentScan(basePackages = "com.hsuforum.easjavatemplate")
 
-@SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
+@SpringBootApplication
 public class ProjectApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {

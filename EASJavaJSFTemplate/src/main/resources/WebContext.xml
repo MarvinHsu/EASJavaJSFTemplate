@@ -13,7 +13,13 @@
        http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd ">
 
 	
-
+	<bean id="logoutUrl" class="java.lang.String">
+		<constructor-arg type="java.lang.String" value="@ssoUrl@/logout?service=@systemUrl@/EASPortal" />
+	</bean>
+	<!-- Portal WS Client -->
+	<bean id="portalClient" class="com.hsuforum.easjavatemplate.ws.client.PortalClient">
+		<property name="portalWSURI" value="@portalWSURI@" />
+	</bean>
     <bean class="com.hsuforum.easjavatemplate.exception.ExceptionHandler"></bean>
     <bean id="serviceLocator" class="com.hsuforum.common.service.util.ServiceLocator"/>
     
@@ -26,6 +32,7 @@
             </list>
         </property>
     </bean>
+    <!--  
     <bean id="facadeMonitoringAdvisor"
 		class="net.bull.javamelody.MonitoringSpringAdvisor">
 		<property name="pointcut">
@@ -46,5 +53,5 @@
 			</bean>
 		</property>
 	</bean>
-    
+    -->
 </beans>

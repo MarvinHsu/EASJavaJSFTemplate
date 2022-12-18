@@ -1,9 +1,9 @@
 package com.hsuforum.easjavatemplate.web.jsf.converter;
 
-import javax.faces.component.UIComponent;
-import javax.faces.context.FacesContext;
-import javax.faces.convert.Converter;
-import javax.faces.convert.ConverterException;
+import jakarta.faces.component.UIComponent;
+import jakarta.faces.context.FacesContext;
+import jakarta.faces.convert.Converter;
+import jakarta.faces.convert.ConverterException;
 
 
 /**
@@ -15,7 +15,7 @@ public class CharacterConverter implements Converter {
 	private final static int OFFSET = (int) 'Ａ' - (int) 'A';
 
 	/**
-	 * @see javax.faces.convert.Converter#getAsObject(javax.faces.context.FacesContext, javax.faces.component.UIComponent, java.lang.String)
+	 * @see jakarta.faces.convert.Converter#getAsObject(jakarta.faces.context.FacesContext, jakarta.faces.component.UIComponent, java.lang.String)
 	 */
 	public Object getAsObject(FacesContext context, UIComponent component,
 			String value) throws ConverterException {
@@ -41,7 +41,7 @@ public class CharacterConverter implements Converter {
 	}
 
 	/**
-	 * @see javax.faces.convert.Converter#getAsString(javax.faces.context.FacesContext, javax.faces.component.UIComponent, java.lang.Object)
+	 * @see jakarta.faces.convert.Converter#getAsString(jakarta.faces.context.FacesContext, jakarta.faces.component.UIComponent, java.lang.Object)
 	 */
 	public String getAsString(FacesContext context, UIComponent component,
 			Object value) throws ConverterException {

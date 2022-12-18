@@ -6,12 +6,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.persistence.EntityManagerFactory;
-import javax.servlet.http.HttpSessionEvent;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.servlet.http.HttpSessionEvent;
 
-import org.jasig.cas.client.session.SingleSignOutFilter;
-import org.jasig.cas.client.session.SingleSignOutHttpSessionListener;
-import org.jasig.cas.client.validation.Cas30ProxyTicketValidator;
+import org.apereo.cas.client.boot.configuration.EnableCasClient;
+import org.apereo.cas.client.session.SingleSignOutFilter;
+import org.apereo.cas.client.session.SingleSignOutHttpSessionListener;
+import org.apereo.cas.client.validation.Cas30ProxyTicketValidator;
 import org.springframework.aop.Advisor;
 import org.springframework.aop.aspectj.AspectJExpressionPointcut;
 import org.springframework.aop.support.DefaultPointcutAdvisor;
@@ -19,6 +20,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
+import org.springframework.context.annotation.Primary;
 import org.springframework.context.event.EventListener;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.security.access.AccessDecisionVoter;
@@ -49,6 +51,7 @@ import org.springframework.security.web.servletapi.SecurityContextHolderAwareReq
 import org.springframework.security.web.session.ConcurrentSessionFilter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionDefinition;
+import org.springframework.transaction.TransactionManager;
 import org.springframework.transaction.interceptor.NameMatchTransactionAttributeSource;
 import org.springframework.transaction.interceptor.RollbackRuleAttribute;
 import org.springframework.transaction.interceptor.RuleBasedTransactionAttribute;
@@ -60,35 +63,21 @@ import com.hsuforum.easjavatemplate.security.userdetails.PortalUserDetailsServic
 import com.hsuforum.easjavatemplate.security.vote.UserVoter;
 import com.hsuforum.easjavatemplate.web.config.WSConfigBean;
 import com.hsuforum.easjavatemplate.ws.client.PortalClient;
-//@EnableCasClient
+import com.hsuforum.easjavatemplate.DefaultSetting;
+
+
+@EnableCasClient
 @Configuration
 @ImportResource(value = { "classpath*:ScheduleContext.xml",
 		"classpath*:WebContext.xml", "classpath*:ServiceContext.xml", "classpath*:DaoContext.xml",
 		"classpath*:DBContext.xml" })
 public class ProjectConfiguration {
 	
-	
-    
 	@Bean
 	@ConfigurationProperties(prefix = "project")
 	public DefaultSetting defaultSetting() {
 		return new DefaultSetting();
 	}
-    @Bean 
-    public PortalClient portalClient(DefaultSetting defaultSetting) {
-    	PortalClient portalClient = new PortalClient();
-    	portalClient.setPortalWSURI(defaultSetting.getPortalWSURI());
-    	return portalClient;
-    }
-
-    @Bean
-    public WSConfigBean wsConfigBean(DefaultSetting defaultSetting) {
-    	WSConfigBean wsConfigBean = new WSConfigBean();
-    	wsConfigBean.setDataTableRows(defaultSetting.getDataTableRows());
-    	wsConfigBean.setMailFrom(defaultSetting.getMailFrom());
-    	return wsConfigBean;
-    }
-
 	@Bean
 	public PlatformTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
 		JpaTransactionManager transactionManager = new JpaTransactionManager();
@@ -192,6 +181,7 @@ public class ProjectConfiguration {
         return casAuthenticationProvider;
     }
 	@Bean
+	@Primary
 	public CasAuthenticationFilter casAuthenticationFilter(
 		AuthenticationManager authenticationManager,
 	    ServiceProperties serviceProperties) throws Exception {
@@ -280,5 +270,6 @@ public class ProjectConfiguration {
 	public SingleSignOutHttpSessionListener singleSignOutHttpSessionListener(HttpSessionEvent event){
 		return new SingleSignOutHttpSessionListener();
 		
-	}
+	}	
+
 }
