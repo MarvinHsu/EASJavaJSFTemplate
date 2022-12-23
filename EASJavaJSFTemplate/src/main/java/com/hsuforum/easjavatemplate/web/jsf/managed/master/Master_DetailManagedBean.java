@@ -8,8 +8,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
-import javax.annotation.PostConstruct;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.SessionScope;
@@ -22,6 +20,8 @@ import com.hsuforum.easjavatemplate.service.DetailJpaService;
 import com.hsuforum.easjavatemplate.service.DetailService;
 import com.hsuforum.easjavatemplate.web.vo.DetailVo;
 import com.hsuforum.easjavatemplate.web.vowrapper.DetailVoWrapper;
+
+import jakarta.annotation.PostConstruct;
 
 /**
  * Detail managedBean

@@ -1,15 +1,14 @@
 package com.hsuforum.easjavatemplate;
 
-import org.jasig.cas.client.session.SingleSignOutFilter;
+import org.apereo.cas.client.session.SingleSignOutFilter;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.cas.authentication.CasAuthenticationProvider;
 import org.springframework.security.cas.web.CasAuthenticationEntryPoint;
 import org.springframework.security.cas.web.CasAuthenticationFilter;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.config.annotation.web.configurers.ExpressionUrlAuthorizationConfigurer;
+import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.access.ExceptionTranslationFilter;
 import org.springframework.security.web.access.intercept.FilterSecurityInterceptor;
 import org.springframework.security.web.authentication.AnonymousAuthenticationFilter;
@@ -19,9 +18,7 @@ import org.springframework.security.web.servletapi.SecurityContextHolderAwareReq
 import org.springframework.security.web.session.ConcurrentSessionFilter;
 
 @Configuration
-@EnableWebSecurity
-public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
-
+public class SecurityConfiguration {
 
 	CasAuthenticationEntryPoint casAuthenticationEntryPoint;
 
@@ -38,7 +35,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	ExceptionTranslationFilter exceptionTranslationFilter;
 	FilterSecurityInterceptor filterSecurityInterceptor;
 	AnonymousAuthenticationFilter anonymousProcessingFilter;
-
 
 	public SecurityConfiguration(CasAuthenticationEntryPoint casAuthenticationEntryPoint, LogoutFilter logoutFilter,
 			CasAuthenticationProvider casAuthenticationProvider, AuthenticationManager authenticationManager,
@@ -63,54 +59,46 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		this.anonymousProcessingFilter = anonymousProcessingFilter;
 	}
 
+	@Bean
+	SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
 
-	@Override
-    protected void configure(HttpSecurity httpSecurity) throws Exception {
-        ExpressionUrlAuthorizationConfigurer<HttpSecurity>.ExpressionInterceptUrlRegistry registry = httpSecurity
-        		.authorizeRequests();
+		httpSecurity
+			.authorizeHttpRequests()
+			.requestMatchers("/images/**").permitAll()
+			.requestMatchers("/resources/**").permitAll()
+			.requestMatchers("/img/**").permitAll()
+			.requestMatchers("/*.html").permitAll()
+			.requestMatchers("/*.xml").permitAll()
+			.requestMatchers("/*.txt").permitAll()
+			.requestMatchers("/login.jsf").permitAll()
+			.requestMatchers("/jakarta.faces.resource/**").permitAll()
+			.requestMatchers("/index.jspx").permitAll()
+			.requestMatchers("/default.jsf").permitAll()
+			.requestMatchers("/favicon.ico").permitAll()
+			.requestMatchers("/error").permitAll()
+			.requestMatchers("/exception/exception.jsf").permitAll()
+			.requestMatchers("/").permitAll()
+			.and()
+			.csrf().disable()
+			.headers().frameOptions().disable()
+			.and()
+			.authorizeHttpRequests().anyRequest().authenticated()
+			.and()
+			.exceptionHandling()
+			.authenticationEntryPoint(casAuthenticationEntryPoint)
+			.and()
+			.addFilterBefore(concurrentSessionFilter, ConcurrentSessionFilter.class)
+			.addFilterBefore(securityContextPersistenceFilter, SecurityContextPersistenceFilter.class)
+			.addFilterBefore(casAuthenticationFilter, CasAuthenticationFilter.class)
+			.addFilterBefore(singleSignOutFilter, CasAuthenticationFilter.class)
+			.addFilterBefore(logoutFilter, LogoutFilter.class)
+			.addFilterBefore(securityContextHolderAwareRequestFilter, SecurityContextHolderAwareRequestFilter.class)
+			.addFilterBefore(anonymousProcessingFilter, AnonymousAuthenticationFilter.class)
+			.addFilterBefore(exceptionTranslationFilter, ExceptionTranslationFilter.class)
+			.addFilterBefore(filterSecurityInterceptor, FilterSecurityInterceptor.class)
+			;
 
-        registry.antMatchers("/images/**").permitAll();
-        registry.antMatchers("/resources/**").permitAll();
-        registry.antMatchers("/img/**").permitAll();
-        registry.antMatchers("/*.html").permitAll();
-        registry.antMatchers("/*.xml").permitAll();    
-   
-        registry
-        	.and()        
-        	.csrf().disable()
-        	.headers().frameOptions().disable()
-        	.and()
-        	.authorizeRequests().anyRequest().authenticated() 
-        	.and()
-        	.exceptionHandling()
-	        .authenticationEntryPoint(casAuthenticationEntryPoint)
-	        .and()
-            .addFilterBefore(concurrentSessionFilter, ConcurrentSessionFilter.class)
-            .addFilterBefore(securityContextPersistenceFilter, SecurityContextPersistenceFilter.class)
-            .addFilterBefore(casAuthenticationFilter, CasAuthenticationFilter.class)
-            .addFilterBefore(singleSignOutFilter, CasAuthenticationFilter.class)
-            .addFilterBefore(logoutFilter, LogoutFilter.class)
-            .addFilterBefore(securityContextHolderAwareRequestFilter, SecurityContextHolderAwareRequestFilter.class)
-            .addFilterBefore(anonymousProcessingFilter, AnonymousAuthenticationFilter.class)
-            .addFilterBefore(exceptionTranslationFilter, ExceptionTranslationFilter.class)
-            .addFilterBefore(filterSecurityInterceptor, FilterSecurityInterceptor.class);
-            
-        
-    }
-	/*
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers( "/kernel/*").authenticated()
-        .and()
-        .exceptionHandling().authenticationEntryPoint(casAuthenticationEntryPoint)
-        .and()
-        .addFilterBefore(singleSignOutFilter, CasAuthenticationFilter.class)
-        .addFilterBefore(logoutFilter, LogoutFilter.class)
-        .addFilterBefore(filterSecurityInterceptor, FilterSecurityInterceptor.class)
-        .csrf().disable()
-        .headers().frameOptions().disable();
-	}*/
-
-	
+		return httpSecurity.build();
+	}
 
 }

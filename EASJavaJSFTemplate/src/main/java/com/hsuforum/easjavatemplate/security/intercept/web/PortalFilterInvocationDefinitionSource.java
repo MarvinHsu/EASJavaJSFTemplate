@@ -9,8 +9,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.security.access.ConfigAttribute;
@@ -26,6 +24,8 @@ import com.hsuforum.easjavatemplate.ws.client.PortalClient;
 import com.hsuforum.easjavatemplate.ws.vo.FunctionItemWSVO;
 import com.hsuforum.easjavatemplate.ws.vo.GroupFunctionWSVO;
 import com.hsuforum.easjavatemplate.ws.vo.GroupWSVO2;
+
+import jakarta.servlet.http.HttpServletRequest;
 
 /**
  * Filter invocation definition source
@@ -45,7 +45,7 @@ public class PortalFilterInvocationDefinitionSource implements FilterInvocationS
 	public void init() {
 		requestMap = new LinkedHashMap<RequestMatcher, Collection<ConfigAttribute>>();
 		GroupFunctionWSVO[] groupFunctionWSVOs = portalClient.findGroupFunctionBySystem(this.getDefaultSetting().getSystemId());
-
+		
 		for (GroupFunctionWSVO groupFunctionWSVO : groupFunctionWSVOs) {
 			List<ConfigAttribute> configAttributes = new ArrayList<ConfigAttribute>();
 			GroupWSVO2 groupWSVO2 = groupFunctionWSVO.getGroupWSVO2();

@@ -8,10 +8,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import javax.annotation.PostConstruct;
-import javax.faces.context.FacesContext;
-import javax.faces.event.ActionEvent;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.primefaces.component.accordionpanel.AccordionPanel;
@@ -19,7 +15,7 @@ import org.primefaces.event.TabChangeEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Component;
-import org.springframework.web.context.annotation.SessionScope;
+import org.springframework.web.context.annotation.RequestScope;
 
 import com.hsuforum.easjavatemplate.DefaultSetting;
 import com.hsuforum.easjavatemplate.security.util.AAUtils;
@@ -30,11 +26,15 @@ import com.hsuforum.easjavatemplate.ws.vo.GroupWSVO;
 import com.hsuforum.easjavatemplate.ws.vo.ModuleWSVO2;
 import com.hsuforum.easjavatemplate.ws.vo.UserWSVO;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.faces.context.FacesContext;
+import jakarta.faces.event.ActionEvent;
+
 /**
  * Navigation menu managed bean
  */
 @Component
-@SessionScope
+@RequestScope
 public class MenuManagedBean implements Serializable {
 	protected final Log logger = LogFactory.getLog(this.getClass());
 	private static final long serialVersionUID = 7319288785728714429L;

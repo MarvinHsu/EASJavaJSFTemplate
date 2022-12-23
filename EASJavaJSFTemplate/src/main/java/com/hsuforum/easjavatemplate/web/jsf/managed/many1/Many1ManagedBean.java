@@ -8,8 +8,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
-import javax.annotation.PostConstruct;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.SessionScope;
@@ -23,6 +21,8 @@ import com.hsuforum.easjavatemplate.service.Many1Service;
 import com.hsuforum.easjavatemplate.service.Many2Service;
 import com.hsuforum.easjavatemplate.web.vo.Many1Vo;
 import com.hsuforum.easjavatemplate.web.vowrapper.Many1VoWrapper;
+
+import jakarta.annotation.PostConstruct;
 
 /**
  * Many1 managedBean

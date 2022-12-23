@@ -2,7 +2,7 @@ package com.hsuforum.easjavatemplate.web.util;
 
 import java.io.Serializable;
 
-import javax.faces.model.SelectItem;
+import jakarta.faces.model.SelectItem;
 
 /**
  * Select item helper

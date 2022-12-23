@@ -1,6 +1,5 @@
 package com.hsuforum.easjavatemplate.ws.vo;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
@@ -8,11 +7,13 @@ import java.util.Date;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
-public class UserWSVO implements Serializable,UserDetails{
+@AllArgsConstructor
+public class UserWSVO implements UserDetails{
 	private static final long serialVersionUID = 1L;
 	private String id;
 	private String account;
