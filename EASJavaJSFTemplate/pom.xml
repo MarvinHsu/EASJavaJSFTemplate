@@ -7,12 +7,12 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.0.2</version>
+		<version>3.0.3</version>
 		<relativePath />
 	</parent>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<joinfaces.version>5.0.2</joinfaces.version>
+		<joinfaces.version>5.0.3</joinfaces.version>
 		<hsucommon.version>4.0.1</hsucommon.version>
 		<java.version>17</java.version>
 		<appRoot>/Application/EASJavaJSFTemplate</appRoot>
@@ -451,6 +451,7 @@
 				<dependency>
 					<groupId>mysql</groupId>
 					<artifactId>mysql-connector-java</artifactId>
+					<version>8.0.32</version>
 				</dependency>
 			</dependencies>
 		</profile>
