@@ -14,8 +14,8 @@ import org.springframework.web.context.annotation.SessionScope;
 
 import com.hsuforum.common.web.jsf.managedbean.impl.TemplatePrimeDataTableManagedBean;
 import com.hsuforum.common.web.vo.ValueObject;
-import com.hsuforum.easjavatemplate.entity.Many1;
-import com.hsuforum.easjavatemplate.entity.Many2;
+import com.hsuforum.easjavatemplate.entity.primary.Many1;
+import com.hsuforum.easjavatemplate.entity.primary.Many2;
 import com.hsuforum.easjavatemplate.service.Many1JpaService;
 import com.hsuforum.easjavatemplate.service.Many1Service;
 import com.hsuforum.easjavatemplate.service.Many2Service;

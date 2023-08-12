@@ -1,18 +1,17 @@
-package com.hsuforum.easjavatemplate.dao;
+package com.hsuforum.easjavatemplate.dao.primary;
 
 import java.util.List;
 
 import com.hsuforum.common.dao.BaseDao;
-import com.hsuforum.easjavatemplate.entity.Detail;
+import com.hsuforum.easjavatemplate.entity.primary.Many2;
 
 /**
- * Detail data access interface
+ * Many2 data access interface
  * @author Marvin
  *
  */
-public interface DetailDao extends BaseDao<Detail, java.lang.String> {
+public interface Many2Dao extends BaseDao<Many2, java.lang.String> {
 
-	
 
 	/**
 	 * If entity has many-to-one or many-to-many relation
@@ -20,8 +19,8 @@ public interface DetailDao extends BaseDao<Detail, java.lang.String> {
 	 * You can modify it for your need Method.
 	 * The main function is in read page fetch all 
 	 * relational date to avoid update page occur error.
-	 * @return List<Detail>
+	 * @return List<Many2>
 	 */
-	List<Detail> findAllFetchRelation();
+	List<Many2> findAllFetchRelation();
 
 }

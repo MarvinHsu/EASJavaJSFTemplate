@@ -65,9 +65,7 @@ import jakarta.servlet.http.HttpSessionEvent;
 
 @EnableCasClient
 @Configuration
-@ImportResource(value = { "classpath*:ScheduleContext.xml",
-		"classpath*:WebContext.xml", "classpath*:ServiceContext.xml", "classpath*:DaoContext.xml",
-		"classpath*:DBContext.xml" })
+@ImportResource(value = { "classpath*:WebContext.xml"  })
 public class ProjectConfiguration {
 	
 	@Bean
@@ -212,7 +210,7 @@ public class ProjectConfiguration {
 	@Bean
     public ServiceProperties serviceProperties() {
 		ServiceProperties serviceProperties = new ServiceProperties();
-		serviceProperties.setService("https://localhost:6443/EASJavaJSFTemplate/login/cas");
+		serviceProperties.setService("https://localhost:10443/EASJavaJSFTemplate/login/cas");
 		serviceProperties.setSendRenew(false);
 		serviceProperties.setAuthenticateAllArtifacts(true);
         return serviceProperties;

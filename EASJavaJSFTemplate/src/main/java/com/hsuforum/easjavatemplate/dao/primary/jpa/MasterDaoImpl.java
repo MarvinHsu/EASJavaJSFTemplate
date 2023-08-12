@@ -1,4 +1,4 @@
-package com.hsuforum.easjavatemplate.dao.jpa;
+package com.hsuforum.easjavatemplate.dao.primary.jpa;
 
 import java.util.HashMap;
 import java.util.List;
@@ -7,22 +7,22 @@ import java.util.Map;
 import org.springframework.stereotype.Repository;
 
 import com.hsuforum.common.dao.jpa.BaseDaoImpl;
-import com.hsuforum.easjavatemplate.dao.Many1Dao;
-import com.hsuforum.easjavatemplate.entity.Many1;
+import com.hsuforum.easjavatemplate.dao.primary.MasterDao;
+import com.hsuforum.easjavatemplate.entity.primary.Master;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 
 /**
- * Many1 data access implement
+ * Master data access implement
  * 
  * @author Marvin
  *
  */
-@Repository("many1Dao")
-public class Many1DaoImpl extends BaseDaoImpl<Many1, java.lang.String> implements Many1Dao {
+@Repository("masterDao")
+public class MasterDaoImpl extends BaseDaoImpl<Master, java.lang.String> implements MasterDao {
 
-	private static final long serialVersionUID = -6584579882486610469L;
+	private static final long serialVersionUID = -3054757798403664433L;
 	@PersistenceContext(unitName = "default")
 	private EntityManager entityManager;
 
@@ -45,26 +45,25 @@ public class Many1DaoImpl extends BaseDaoImpl<Many1, java.lang.String> implement
 	}
 
 	/**
-	 * @see com.hsuforum.easportalm.dao.Many1Dao#findAllFetchRelation()
+	 * @see com.hsuforum.easportalm.dao.MasterDao#findAllFetchRelation()
 	 */
-	public List<Many1> findAllFetchRelation() {
+	public List<Master> findAllFetchRelation() {
 		StringBuffer queryString = new StringBuffer();
-		queryString.append("SELECT DISTINCT entity FROM Many1 entity	");
-		queryString.append("LEFT JOIN FETCH entity.many2s ");
+		queryString.append("SELECT DISTINCT entity FROM Master entity ");
+		queryString.append("LEFT JOIN FETCH entity.details ");
 		queryString.append("ORDER BY entity.id	");
 
-		List<Many1> list = this.find(queryString);
+		List<Master> list = this.find(queryString);
 
 		return list;
 	}
 
 	@Override
-	public List<Many1> findByCriteriaMap(final Map<String, ? extends Object> criteriaMap,
+	public List<Master> findByCriteriaMap(final Map<String, ? extends Object> criteriaMap,
 			final Map<String, String> operMap, final Map<String, String> sortMap) {
 		StringBuffer queryString = new StringBuffer();
-		queryString.append("SELECT DISTINCT entity FROM Many1 entity	");
-		queryString.append("LEFT JOIN FETCH entity.many2s ");
-
+		queryString.append("SELECT DISTINCT entity FROM Master entity ");
+		queryString.append("LEFT JOIN FETCH entity.details ");
 		Map<String, Object> newCriteriaMap = new HashMap<String, Object>();
 
 		boolean isTruncateWhereQueryString = false;

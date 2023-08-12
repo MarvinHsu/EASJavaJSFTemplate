@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import com.hsuforum.easjavatemplate.entity.Many1;
+import com.hsuforum.easjavatemplate.entity.primary.Many1;
 import com.hsuforum.easjavatemplate.service.Many1Service;
 
 /**

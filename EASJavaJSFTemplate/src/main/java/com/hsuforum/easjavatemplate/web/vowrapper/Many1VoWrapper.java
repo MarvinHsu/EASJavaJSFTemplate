@@ -1,7 +1,7 @@
 package com.hsuforum.easjavatemplate.web.vowrapper;
 
 import com.hsuforum.common.web.vo.impl.VoWrapperImpl;
-import com.hsuforum.easjavatemplate.entity.Many1;
+import com.hsuforum.easjavatemplate.entity.primary.Many1;
 import com.hsuforum.easjavatemplate.web.vo.Many1Vo;
 /**
  * Transfer Many1 to Many1Vo wrapper

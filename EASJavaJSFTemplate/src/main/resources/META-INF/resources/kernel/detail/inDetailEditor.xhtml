@@ -8,33 +8,33 @@
 	<p:panelGrid columns="2">
 
 		<h:outputText
-			value="#{resources.com_hsuforum_eastjavatemplate_entity_Detail_id}" />
+			value="#{resources.com_hsuforum_eastjavatemplate_entity_primary_Detail_id}" />
 		<p:inputText value="#{detailManagedBean.updatingData.entity.id}"
-			label="#{resources.com_hsuforum_eastjavatemplate_entity_Detail_id}"
+			label="#{resources.com_hsuforum_eastjavatemplate_entity_primary_Detail_id}"
 			readOnly="true" />
 
 
 		<h:outputText
-			value="#{resources.com_hsuforum_eastjavatemplate_entity_Detail_name}" />
+			value="#{resources.com_hsuforum_eastjavatemplate_entity_primary_Detail_name}" />
 		<p:inputText id="inputTextName"
 			value="#{detailManagedBean.updatingData.entity.name}"
-			label="#{resources.com_hsuforum_eastjavatemplate_entity_Detail_name}"
+			label="#{resources.com_hsuforum_eastjavatemplate_entity_primary_Detail_name}"
 			required="true" />
 
 
 		<h:outputText
-			value="#{resources.com_hsuforum_eastjavatemplate_entity_Detail_code}" />
+			value="#{resources.com_hsuforum_eastjavatemplate_entity_primary_Detail_code}" />
 		<p:inputText id="inputTextCode"
 			value="#{detailManagedBean.updatingData.entity.code}"
-			label="#{resources.com_hsuforum_eastjavatemplate_entity_Detail_code}"
+			label="#{resources.com_hsuforum_eastjavatemplate_entity_primary_Detail_code}"
 			required="true" />
 
 
 		<h:outputText
-			value="#{resources.com_hsuforum_eastjavatemplate_entity_Detail_master}" />
+			value="#{resources.com_hsuforum_eastjavatemplate_entity_primary_Detail_master}" />
 		<p:selectOneMenu id="selectMasterId"
 			value="#{detailManagedBean.updatingData.selectMasterId}"
-			label="#{resources.com_hsuforum_eastjavatemplate_entity_Detail_master}"
+			label="#{resources.com_hsuforum_eastjavatemplate_entity_primary_Detail_master}"
 			required="true">
 			<f:selectItems value="#{detailManagedBean.masterList}" />
 		</p:selectOneMenu>

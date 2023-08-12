@@ -1,7 +1,7 @@
 package com.hsuforum.easjavatemplate.web.vowrapper;
 
 import com.hsuforum.common.web.vo.impl.VoWrapperImpl;
-import com.hsuforum.easjavatemplate.entity.Detail;
+import com.hsuforum.easjavatemplate.entity.primary.Detail;
 import com.hsuforum.easjavatemplate.web.vo.DetailVo;
 /**
  * Transfer Detail to DetailVo wrapper

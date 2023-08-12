@@ -11,8 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.hsuforum.common.service.impl.BaseServiceImpl;
-import com.hsuforum.easjavatemplate.dao.MasterDao;
-import com.hsuforum.easjavatemplate.entity.Master;
+import com.hsuforum.easjavatemplate.dao.primary.MasterDao;
+import com.hsuforum.easjavatemplate.entity.primary.Master;
 import com.hsuforum.easjavatemplate.service.MasterService;
 
 /**

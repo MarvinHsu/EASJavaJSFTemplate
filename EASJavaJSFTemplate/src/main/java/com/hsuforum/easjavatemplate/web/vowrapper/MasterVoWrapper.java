@@ -1,7 +1,7 @@
 package com.hsuforum.easjavatemplate.web.vowrapper;
 
 import com.hsuforum.common.web.vo.impl.VoWrapperImpl;
-import com.hsuforum.easjavatemplate.entity.Master;
+import com.hsuforum.easjavatemplate.entity.primary.Master;
 import com.hsuforum.easjavatemplate.web.vo.MasterVo;
 /**
  * Transfer Master to MasterVo wrapper
