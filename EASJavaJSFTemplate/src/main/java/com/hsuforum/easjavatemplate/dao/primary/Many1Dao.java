@@ -1,16 +1,16 @@
-package com.hsuforum.easjavatemplate.dao;
+package com.hsuforum.easjavatemplate.dao.primary;
 
 import java.util.List;
 
 import com.hsuforum.common.dao.BaseDao;
-import com.hsuforum.easjavatemplate.entity.Master;
+import com.hsuforum.easjavatemplate.entity.primary.Many1;
 
 /**
- * Master data access interface
+ * Many1 data access interface
  * @author Marvin
  *
  */
-public interface MasterDao extends BaseDao<Master, java.lang.String> {
+public interface Many1Dao extends BaseDao<Many1, java.lang.String> {
 
 
 	/**
@@ -19,8 +19,8 @@ public interface MasterDao extends BaseDao<Master, java.lang.String> {
 	 * You can modify it for your need Method.
 	 * The main function is in read page fetch all 
 	 * relational date to avoid update page occur error.
-	 * @return List<Master>
+	 * @return List<Many1>
 	 */
-	List<Master> findAllFetchRelation();
+	List<Many1> findAllFetchRelation();
 
 }

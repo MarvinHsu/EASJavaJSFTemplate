@@ -2,7 +2,7 @@ package com.hsuforum.easjavatemplate.web.vo;
 
 
 import com.hsuforum.common.web.vo.impl.ValueObjectImpl;
-import com.hsuforum.easjavatemplate.entity.Detail;
+import com.hsuforum.easjavatemplate.entity.primary.Detail;
 
 
 /**

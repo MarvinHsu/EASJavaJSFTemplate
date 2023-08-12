@@ -4,7 +4,7 @@ package com.hsuforum.easjavatemplate.service;
 import java.util.List;
 
 import com.hsuforum.common.service.BaseService;
-import com.hsuforum.easjavatemplate.entity.Many1;
+import com.hsuforum.easjavatemplate.entity.primary.Many1;
 
 /**
  * Many1 service interface

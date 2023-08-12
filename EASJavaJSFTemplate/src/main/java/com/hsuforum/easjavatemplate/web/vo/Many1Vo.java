@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.hsuforum.common.web.vo.impl.ValueObjectImpl;
-import com.hsuforum.easjavatemplate.entity.Many1;
-import com.hsuforum.easjavatemplate.entity.Many2;
+import com.hsuforum.easjavatemplate.entity.primary.Many1;
+import com.hsuforum.easjavatemplate.entity.primary.Many2;
 
 /**
  * Many1's Value Object Implement

@@ -7,11 +7,11 @@
 <body>
 	<ui:composition template="/template/backOfficeTemplate.xhtml">
 		<ui:define name="head">
-			<title>#{resources.com_hsuforum_eastjavatemplate_entity_Master}</title>
+			<title>#{resources.com_hsuforum_eastjavatemplate_entity_primary_Master}</title>
 		</ui:define>
 		<ui:define name="main">
 			<h:form id="readForm">
-				<h3>#{resources.com_hsuforum_eastjavatemplate_entity_Master}</h3>
+				<h3>#{resources.com_hsuforum_eastjavatemplate_entity_primary_Master}</h3>
 				<p:growl id="growl" />
 
 				<p:ajaxStatus onstart="PF('statusDialog').show()"
@@ -26,15 +26,15 @@
 
 
 						<h:outputText
-							value="#{resources.com_hsuforum_eastjavatemplate_entity_Master_name}" />
+							value="#{resources.com_hsuforum_eastjavatemplate_entity_primary_Master_name}" />
 						<p:inputText value="#{masterManagedBean.findCriteriaMap['name']}"
-							label="#{resources.com_hsuforum_eastjavatemplate_entity_Master_name}" />
+							label="#{resources.com_hsuforum_eastjavatemplate_entity_primary_Master_name}" />
 
 
 						<h:outputText
-							value="#{resources.com_hsuforum_eastjavatemplate_entity_Master_code}" />
+							value="#{resources.com_hsuforum_eastjavatemplate_entity_primary_Master_code}" />
 						<p:inputText value="#{masterManagedBean.findCriteriaMap['code']}"
-							label="#{resources.com_hsuforum_eastjavatemplate_entity_Master_code}" />
+							label="#{resources.com_hsuforum_eastjavatemplate_entity_primary_Master_code}" />
 
 
 						<f:facet name="footer">
@@ -63,7 +63,7 @@
 
 						<p:column id="columnId" sortBy="#{bo.id}"
 							rendered="#{defaultSetting.devMode}"
-							headerText="#{resources.com_hsuforum_eastjavatemplate_entity_Master_id}">
+							headerText="#{resources.com_hsuforum_eastjavatemplate_entity_primary_Master_id}">
 
 							<h:outputText value="#{bo.id}"
 								rendered="#{!menuManagedBean.isGrant('master','update')}" />
@@ -74,7 +74,7 @@
 						</p:column>
 
 						<p:column id="columnName" sortBy="#{bo.name}"
-							headerText="#{resources.com_hsuforum_eastjavatemplate_entity_Master_name}">
+							headerText="#{resources.com_hsuforum_eastjavatemplate_entity_primary_Master_name}">
 
 							<h:outputText value="#{bo.name}"
 								rendered="#{!menuManagedBean.isGrant('master','update')}" />
@@ -84,7 +84,7 @@
 						</p:column>
 
 						<p:column id="columnCode" sortBy="#{bo.code}"
-							headerText="#{resources.com_hsuforum_eastjavatemplate_entity_Master_code}">
+							headerText="#{resources.com_hsuforum_eastjavatemplate_entity_primary_Master_code}">
 
 							<h:outputLabel value="#{bo.code}" />
 						</p:column>

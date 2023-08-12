@@ -1,4 +1,4 @@
-package com.hsuforum.easjavatemplate.entity;
+package com.hsuforum.easjavatemplate.entity.primary;
 
 import com.hsuforum.common.entity.impl.BaseEntityImpl;
 

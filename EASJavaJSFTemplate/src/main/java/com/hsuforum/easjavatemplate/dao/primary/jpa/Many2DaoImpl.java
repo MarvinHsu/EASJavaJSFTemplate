@@ -1,4 +1,4 @@
-package com.hsuforum.easjavatemplate.dao.jpa;
+package com.hsuforum.easjavatemplate.dao.primary.jpa;
 
 import java.util.HashMap;
 import java.util.List;
@@ -7,8 +7,8 @@ import java.util.Map;
 import org.springframework.stereotype.Repository;
 
 import com.hsuforum.common.dao.jpa.BaseDaoImpl;
-import com.hsuforum.easjavatemplate.dao.Many2Dao;
-import com.hsuforum.easjavatemplate.entity.Many2;
+import com.hsuforum.easjavatemplate.dao.primary.Many2Dao;
+import com.hsuforum.easjavatemplate.entity.primary.Many2;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;

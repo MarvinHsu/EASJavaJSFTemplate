@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.hsuforum.common.service.impl.BaseJpaServiceImpl;
-import com.hsuforum.easjavatemplate.dao.Many2JpaRepository;
-import com.hsuforum.easjavatemplate.entity.Many2;
+import com.hsuforum.easjavatemplate.dao.primary.Many2JpaRepository;
+import com.hsuforum.easjavatemplate.entity.primary.Many2;
 import com.hsuforum.easjavatemplate.service.Many2JpaService;
 
 @Service("many2JpaService")

@@ -32,7 +32,7 @@
             </list>
         </property>
     </bean>
-    <!--  
+    
     <bean id="facadeMonitoringAdvisor"
 		class="net.bull.javamelody.MonitoringSpringAdvisor">
 		<property name="pointcut">
@@ -53,5 +53,5 @@
 			</bean>
 		</property>
 	</bean>
-    -->
+    
 </beans>

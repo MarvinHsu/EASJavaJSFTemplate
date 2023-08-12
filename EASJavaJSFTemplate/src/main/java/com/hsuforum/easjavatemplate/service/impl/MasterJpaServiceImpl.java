@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.hsuforum.common.service.impl.BaseJpaServiceImpl;
-import com.hsuforum.easjavatemplate.dao.MasterJpaRepository;
-import com.hsuforum.easjavatemplate.entity.Master;
+import com.hsuforum.easjavatemplate.dao.primary.MasterJpaRepository;
+import com.hsuforum.easjavatemplate.entity.primary.Master;
 import com.hsuforum.easjavatemplate.service.MasterJpaService;
 
 @Service("masterJpaService")

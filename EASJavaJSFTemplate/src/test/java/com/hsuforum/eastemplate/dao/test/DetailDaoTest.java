@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import com.hsuforum.easjavatemplate.dao.DetailDao;
-import com.hsuforum.easjavatemplate.entity.Detail;
+import com.hsuforum.easjavatemplate.dao.primary.DetailDao;
+import com.hsuforum.easjavatemplate.entity.primary.Detail;
 
 /**
  * DetailDao unit test class

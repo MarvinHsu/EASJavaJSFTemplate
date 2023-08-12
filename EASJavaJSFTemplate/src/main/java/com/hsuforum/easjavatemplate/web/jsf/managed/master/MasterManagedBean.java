@@ -12,7 +12,7 @@ import org.springframework.web.context.annotation.SessionScope;
 import com.hsuforum.common.web.jsf.managedbean.impl.TemplatePrimeDataTableManagedBean;
 import com.hsuforum.common.web.jsf.utils.JSFUtils;
 import com.hsuforum.common.web.vo.ValueObject;
-import com.hsuforum.easjavatemplate.entity.Master;
+import com.hsuforum.easjavatemplate.entity.primary.Master;
 import com.hsuforum.easjavatemplate.service.MasterJpaService;
 import com.hsuforum.easjavatemplate.service.MasterService;
 import com.hsuforum.easjavatemplate.web.vo.MasterVo;
