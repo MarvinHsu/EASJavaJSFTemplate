@@ -54,6 +54,8 @@ import org.springframework.transaction.interceptor.RuleBasedTransactionAttribute
 import org.springframework.transaction.interceptor.TransactionAttribute;
 import org.springframework.transaction.interceptor.TransactionInterceptor;
 
+import com.hsuforum.common.service.util.ServiceLocator;
+import com.hsuforum.easjavatemplate.exception.ExceptionHandler;
 import com.hsuforum.easjavatemplate.security.intercept.web.PortalFilterInvocationDefinitionSource;
 import com.hsuforum.easjavatemplate.security.userdetails.PortalUserDetailsService;
 import com.hsuforum.easjavatemplate.security.vote.UserVoter;
@@ -74,46 +76,13 @@ public class ProjectConfiguration {
 		return new DefaultSetting();
 	}
 	@Bean
-	public PlatformTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
-		JpaTransactionManager transactionManager = new JpaTransactionManager();
-		transactionManager.setEntityManagerFactory(entityManagerFactory);
-
-		return transactionManager;
-	}
-
-	@Bean
-	public TransactionInterceptor txAdvice(PlatformTransactionManager transactionManager) {
-		NameMatchTransactionAttributeSource source = new NameMatchTransactionAttributeSource();
-		
-		RuleBasedTransactionAttribute readOnlyTx = new RuleBasedTransactionAttribute();
-		readOnlyTx.setReadOnly(true);
-		readOnlyTx.setPropagationBehavior(TransactionDefinition.PROPAGATION_NOT_SUPPORTED);
-		
-		RuleBasedTransactionAttribute requiredTx = new RuleBasedTransactionAttribute();
-		requiredTx.setRollbackRules(Collections.singletonList(new RollbackRuleAttribute(Exception.class)));
-		requiredTx.setPropagationBehavior(TransactionDefinition.PROPAGATION_REQUIRED);
-
-		Map<String, TransactionAttribute> txMap = new HashMap<>();
-		txMap.put("create*", requiredTx);
-		txMap.put("update*", requiredTx);
-		txMap.put("delete*", requiredTx);
-		txMap.put("*", readOnlyTx);
-		source.setNameMap(txMap);
-		TransactionInterceptor txAdvice = new TransactionInterceptor(transactionManager, source);
-		return txAdvice;
+	ExceptionHandler exceptionHandler() {
+		return new ExceptionHandler();
 	}
 	@Bean
-    public Advisor dbOperation1(TransactionInterceptor txAdvice) {
-        AspectJExpressionPointcut pointcut = new AspectJExpressionPointcut();
-        pointcut.setExpression("execution(* com.hsuforum..*Facade.*(..))");
-        return new DefaultPointcutAdvisor(pointcut, txAdvice);
-    }
-	@Bean
-    public Advisor dbOperation2(TransactionInterceptor txAdvice) {
-        AspectJExpressionPointcut pointcut = new AspectJExpressionPointcut();
-        pointcut.setExpression("execution(* com.hsuforum..*Service.*(..))");
-        return new DefaultPointcutAdvisor(pointcut, txAdvice);
-    }
+	ServiceLocator serviceLocator() {
+		return new ServiceLocator();
+	}
 	
 	@Bean
     public SessionRegistry sessionRegistry() {

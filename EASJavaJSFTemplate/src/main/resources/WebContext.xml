@@ -20,9 +20,6 @@
 	<bean id="portalClient" class="com.hsuforum.easjavatemplate.ws.client.PortalClient">
 		<property name="portalWSURI" value="@portalWSURI@" />
 	</bean>
-    <bean class="com.hsuforum.easjavatemplate.exception.ExceptionHandler"></bean>
-    <bean id="serviceLocator" class="com.hsuforum.common.service.util.ServiceLocator"/>
-    
     <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
         <property name="basenames">
             <list>
