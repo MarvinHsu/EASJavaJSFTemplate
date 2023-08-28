@@ -5,7 +5,6 @@ html {
 body {
 	margin: 0;
 	padding: 0;
-	font: normal 14px;
 	height: 100%;
 }
 
@@ -141,8 +140,4 @@ body {
 .tableRowTopClass {
 	vertical-align: top;
 
-}
-
-.ui-widget .ui-widget {
-    font-size: 11px;
 }

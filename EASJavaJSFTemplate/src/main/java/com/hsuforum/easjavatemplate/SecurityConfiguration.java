@@ -38,7 +38,7 @@ public class SecurityConfiguration {
 	FilterSecurityInterceptor filterSecurityInterceptor;
 	AnonymousAuthenticationFilter anonymousProcessingFilter;
 
-	public SecurityConfiguration(CasAuthenticationEntryPoint casAuthenticationEntryPoint, LogoutFilter logoutFilter,
+	SecurityConfiguration(CasAuthenticationEntryPoint casAuthenticationEntryPoint, LogoutFilter logoutFilter,
 			CasAuthenticationProvider casAuthenticationProvider, AuthenticationManager authenticationManager,
 			SingleSignOutFilter singleSignOutFilter, ConcurrentSessionFilter concurrentSessionFilter,
 			SecurityContextPersistenceFilter securityContextPersistenceFilter,
@@ -62,7 +62,7 @@ public class SecurityConfiguration {
 	}
 	
 	@Bean
-	public SecurityFilterChain securityFilterChain(HttpSecurity http, HandlerMappingIntrospector introspector) throws Exception {
+	SecurityFilterChain securityFilterChain(HttpSecurity http, HandlerMappingIntrospector introspector) throws Exception {
 		MvcRequestMatcher.Builder mvcMatcherBuilder = new MvcRequestMatcher.Builder(introspector);
 		
 		http.authorizeHttpRequests((requests) -> {
