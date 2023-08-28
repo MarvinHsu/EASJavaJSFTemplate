@@ -8,14 +8,12 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.primefaces.component.accordionpanel.AccordionPanel;
 import org.primefaces.event.TabChangeEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Component;
-import org.springframework.web.context.annotation.RequestScope;
+import org.springframework.web.context.annotation.SessionScope;
 
 import com.hsuforum.easjavatemplate.DefaultSetting;
 import com.hsuforum.easjavatemplate.security.util.AAUtils;
@@ -29,14 +27,15 @@ import com.hsuforum.easjavatemplate.ws.vo.UserWSVO;
 import jakarta.annotation.PostConstruct;
 import jakarta.faces.context.FacesContext;
 import jakarta.faces.event.ActionEvent;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Navigation menu managed bean
  */
 @Component
-@RequestScope
+@SessionScope
+@Slf4j
 public class MenuManagedBean implements Serializable {
-	protected final Log logger = LogFactory.getLog(this.getClass());
 	private static final long serialVersionUID = 7319288785728714429L;
 
 	@Autowired
@@ -64,7 +63,7 @@ public class MenuManagedBean implements Serializable {
         if(principal instanceof UserWSVO) {
 			//this.userId = JSFUtils.getHttpServletRequest().getRemoteUser();
         	UserWSVO userWSVO=(UserWSVO)principal;
-	        logger.info("login java_jsf_tempate userWSVO ="+userWSVO);
+	        log.info("login java_jsf_tempate userWSVO ="+userWSVO);
 	        
 			this.userWSVO = this.getPortalClient().findUserById(this.getDefaultSetting().getSystemId(), userWSVO.getAccount().toUpperCase());
 			ModuleWSVO2[] moduleArray = this.getPortalClient().findModuleBySystem(this.getDefaultSetting().getSystemId());
@@ -129,7 +128,7 @@ public class MenuManagedBean implements Serializable {
 				}
 			}
         }else {
-        	logger.info("login java_jsf_tempate principal ="+principal);
+        	log.info("login java_jsf_tempate principal ="+principal);
         }
 	}
 
