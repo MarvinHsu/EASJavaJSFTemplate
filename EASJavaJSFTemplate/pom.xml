@@ -7,12 +7,12 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.1.4</version>
+		<version>3.1.5</version>
 		<relativePath />
 	</parent>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<joinfaces.version>5.1.4</joinfaces.version>
+		<joinfaces.version>5.1.5</joinfaces.version>
 		<hsucommon.version>4.0.5</hsucommon.version>
 		<easscore.version>3.0.5</easscore.version>
 		<java.version>17</java.version>
