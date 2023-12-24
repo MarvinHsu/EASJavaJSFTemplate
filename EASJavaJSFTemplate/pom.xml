@@ -2,19 +2,19 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.hsuforum.EASJavaJSFTemplate</groupId>
 	<artifactId>EASJavaJSFTemplate</artifactId>
-	<version>3.0.5</version>
+	<version>3.1.0</version>
 	<packaging>jar</packaging>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.1.5</version>
+		<version>3.2.1</version>
 		<relativePath />
 	</parent>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<joinfaces.version>5.1.5</joinfaces.version>
-		<hsucommon.version>4.0.5</hsucommon.version>
-		<easscore.version>3.0.5</easscore.version>
+		<joinfaces.version>5.2.1</joinfaces.version>
+		<hsucommon.version>4.1.0</hsucommon.version>
+		<easscore.version>3.1.0</easscore.version>
 		<java.version>17</java.version>
 		<appRoot>/Application/EASJavaJSFTemplate</appRoot>
 		<systemUrl>https://localhost:10443</systemUrl>
@@ -150,7 +150,7 @@
 		<dependency>
 			<groupId>org.owasp.esapi</groupId>
 			<artifactId>esapi</artifactId>
-			<version>2.5.2.0</version>
+			<version>2.5.3.1</version>
 			<exclusions>
 				<exclusion>
 					<groupId>xalan</groupId>
@@ -253,7 +253,7 @@
 			</dependency>
 			<dependency>
 				<groupId>org.joinfaces</groupId>
-				<artifactId>joinfaces-dependencies</artifactId>
+				<artifactId>joinfaces-platform</artifactId>
 				<version>${joinfaces.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
@@ -503,306 +503,6 @@
 			<properties>
 				<spring.profiles.active>tomcat-sqlserver</spring.profiles.active>
 			</properties>
-		</profile>
-		<profile>
-			<id>jetty-db2</id>
-			<properties>
-				<spring.profiles.active>jetty-db2</spring.profiles.active>
-			</properties>
-			<dependencies>
-				<dependency>
-					<groupId>org.joinfaces</groupId>
-					<artifactId>primefaces-spring-boot-starter</artifactId>
-					<exclusions>
-						<exclusion>
-							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-starter-logging</artifactId>
-						</exclusion>
-						<exclusion>
-							<groupId>org.joinfaces</groupId>
-							<artifactId>tomcat-spring-boot-starter</artifactId>
-						</exclusion>
-						<exclusion>
-							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-starter-tomcat</artifactId>
-						</exclusion>
-					</exclusions>
-
-				</dependency>
-				<dependency>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-starter-web</artifactId>
-					<exclusions>
-						<exclusion>
-							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-starter-logging</artifactId>
-						</exclusion>
-						<exclusion>
-							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-starter-tomcat</artifactId>
-						</exclusion>
-					</exclusions>
-				</dependency>
-				<dependency>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-starter-jetty</artifactId>
-				</dependency>
-				<dependency>
-					<groupId>jakarta.servlet.jsp</groupId>
-					<artifactId>jakarta.servlet.jsp-api</artifactId>
-					<version>3.1.1</version>
-				</dependency>
-				<dependency>
-			        <groupId>jakarta.servlet</groupId>
-			        <artifactId>jakarta.servlet-api</artifactId>
-			        <version>5.0.0</version>
-			    </dependency>
-				<dependency>
-					<groupId>jakarta.el</groupId>
-					<artifactId>jakarta.el-api</artifactId>
-					<version>5.0.1</version>
-				</dependency>
-			</dependencies>
-		</profile>
-		<profile>
-			<id>jetty-mysql</id>
-			<properties>
-				<spring.profiles.active>jetty-mysql</spring.profiles.active>
-			</properties>
-			<dependencies>
-				<dependency>
-					<groupId>org.joinfaces</groupId>
-					<artifactId>primefaces-spring-boot-starter</artifactId>
-					<exclusions>
-						<exclusion>
-							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-starter-logging</artifactId>
-						</exclusion>
-						<exclusion>
-							<groupId>org.joinfaces</groupId>
-							<artifactId>tomcat-spring-boot-starter</artifactId>
-						</exclusion>
-						<exclusion>
-							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-starter-tomcat</artifactId>
-						</exclusion>
-					</exclusions>
-
-				</dependency>
-				<dependency>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-starter-web</artifactId>
-					<exclusions>
-						<exclusion>
-							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-starter-logging</artifactId>
-						</exclusion>
-						<exclusion>
-							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-starter-tomcat</artifactId>
-						</exclusion>
-					</exclusions>
-				</dependency>
-				<dependency>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-starter-jetty</artifactId>
-				</dependency>
-				<dependency>
-					<groupId>jakarta.servlet.jsp</groupId>
-					<artifactId>jakarta.servlet.jsp-api</artifactId>
-					<version>3.1.1</version>
-				</dependency>
-				<dependency>
-			        <groupId>jakarta.servlet</groupId>
-			        <artifactId>jakarta.servlet-api</artifactId>
-			        <version>5.0.0</version>
-			    </dependency>
-				<dependency>
-					<groupId>jakarta.el</groupId>
-					<artifactId>jakarta.el-api</artifactId>
-					<version>5.0.1</version>
-				</dependency>
-			</dependencies>
-		</profile>
-		<profile>
-			<id>jetty-oracle</id>
-			<properties>
-				<spring.profiles.active>jetty-oracle</spring.profiles.active>
-			</properties>
-			<dependencies>
-				<dependency>
-					<groupId>org.joinfaces</groupId>
-					<artifactId>primefaces-spring-boot-starter</artifactId>
-					<exclusions>
-						<exclusion>
-							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-starter-logging</artifactId>
-						</exclusion>
-						<exclusion>
-							<groupId>org.joinfaces</groupId>
-							<artifactId>tomcat-spring-boot-starter</artifactId>
-						</exclusion>
-						<exclusion>
-							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-starter-tomcat</artifactId>
-						</exclusion>
-					</exclusions>
-
-				</dependency>
-				<dependency>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-starter-web</artifactId>
-					<exclusions>
-						<exclusion>
-							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-starter-logging</artifactId>
-						</exclusion>
-						<exclusion>
-							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-starter-tomcat</artifactId>
-						</exclusion>
-					</exclusions>
-				</dependency>
-				<dependency>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-starter-jetty</artifactId>
-				</dependency>
-				<dependency>
-					<groupId>jakarta.servlet.jsp</groupId>
-					<artifactId>jakarta.servlet.jsp-api</artifactId>
-					<version>3.1.1</version>
-				</dependency>
-				<dependency>
-			        <groupId>jakarta.servlet</groupId>
-			        <artifactId>jakarta.servlet-api</artifactId>
-			        <version>5.0.0</version>
-			    </dependency>
-				<dependency>
-					<groupId>jakarta.el</groupId>
-					<artifactId>jakarta.el-api</artifactId>
-					<version>5.0.1</version>
-				</dependency>
-			</dependencies>
-		</profile>
-		<profile>
-			<id>jetty-postgresql</id>
-			<properties>
-				<spring.profiles.active>jetty-postgresql</spring.profiles.active>
-			</properties>
-			<dependencies>
-				<dependency>
-					<groupId>org.joinfaces</groupId>
-					<artifactId>primefaces-spring-boot-starter</artifactId>
-					<exclusions>
-						<exclusion>
-							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-starter-logging</artifactId>
-						</exclusion>
-						<exclusion>
-							<groupId>org.joinfaces</groupId>
-							<artifactId>tomcat-spring-boot-starter</artifactId>
-						</exclusion>
-						<exclusion>
-							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-starter-tomcat</artifactId>
-						</exclusion>
-					</exclusions>
-
-				</dependency>
-				<dependency>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-starter-web</artifactId>
-					<exclusions>
-						<exclusion>
-							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-starter-logging</artifactId>
-						</exclusion>
-						<exclusion>
-							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-starter-tomcat</artifactId>
-						</exclusion>
-					</exclusions>
-				</dependency>
-				<dependency>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-starter-jetty</artifactId>
-				</dependency>
-				<dependency>
-					<groupId>jakarta.servlet.jsp</groupId>
-					<artifactId>jakarta.servlet.jsp-api</artifactId>
-					<version>3.1.1</version>
-				</dependency>
-				<dependency>
-			        <groupId>jakarta.servlet</groupId>
-			        <artifactId>jakarta.servlet-api</artifactId>
-			        <version>5.0.0</version>
-			    </dependency>
-				<dependency>
-					<groupId>jakarta.el</groupId>
-					<artifactId>jakarta.el-api</artifactId>
-					<version>5.0.1</version>
-				</dependency>
-			</dependencies>
-		</profile>
-		<profile>
-			<id>jetty-sqlserver</id>
-			<properties>
-				<spring.profiles.active>jetty-sqlserver</spring.profiles.active>
-			</properties>
-			<dependencies>
-				<dependency>
-					<groupId>org.joinfaces</groupId>
-					<artifactId>primefaces-spring-boot-starter</artifactId>
-					<exclusions>
-						<exclusion>
-							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-starter-logging</artifactId>
-						</exclusion>
-						<exclusion>
-							<groupId>org.joinfaces</groupId>
-							<artifactId>tomcat-spring-boot-starter</artifactId>
-						</exclusion>
-						<exclusion>
-							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-starter-tomcat</artifactId>
-						</exclusion>
-					</exclusions>
-
-				</dependency>
-				<dependency>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-starter-web</artifactId>
-					<exclusions>
-						<exclusion>
-							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-starter-logging</artifactId>
-						</exclusion>
-						<exclusion>
-							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-starter-tomcat</artifactId>
-						</exclusion>
-					</exclusions>
-				</dependency>
-				<dependency>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-starter-jetty</artifactId>
-				</dependency>
-				<dependency>
-					<groupId>jakarta.servlet.jsp</groupId>
-					<artifactId>jakarta.servlet.jsp-api</artifactId>
-					<version>3.1.1</version>
-				</dependency>
-				<dependency>
-			        <groupId>jakarta.servlet</groupId>
-			        <artifactId>jakarta.servlet-api</artifactId>
-			        <version>5.0.0</version>
-			    </dependency>
-				<dependency>
-					<groupId>jakarta.el</groupId>
-					<artifactId>jakarta.el-api</artifactId>
-					<version>5.0.1</version>
-				</dependency>
-			</dependencies>
 		</profile>
 	</profiles>
 </project>
