@@ -2,19 +2,19 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.hsuforum.EASJavaJSFTemplate</groupId>
 	<artifactId>EASJavaJSFTemplate</artifactId>
-	<version>3.1.0</version>
+	<version>3.1.1</version>
 	<packaging>jar</packaging>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.2.1</version>
+		<version>3.2.3</version>
 		<relativePath />
 	</parent>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<joinfaces.version>5.2.1</joinfaces.version>
-		<hsucommon.version>4.1.0</hsucommon.version>
-		<easscore.version>3.1.0</easscore.version>
+		<joinfaces.version>5.2.3.1</joinfaces.version>
+		<hsucommon.version>4.1.1</hsucommon.version>
+		<easscore.version>3.1.1</easscore.version>
 		<java.version>17</java.version>
 		<appRoot>/Application/EASJavaJSFTemplate</appRoot>
 		<systemUrl>https://localhost:10443</systemUrl>
