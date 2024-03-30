@@ -7,12 +7,12 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.2.3</version>
+		<version>3.2.4</version>
 		<relativePath />
 	</parent>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<joinfaces.version>5.2.3.1</joinfaces.version>
+		<joinfaces.version>5.2.4</joinfaces.version>
 		<hsucommon.version>4.1.1</hsucommon.version>
 		<easscore.version>3.1.1</easscore.version>
 		<java.version>17</java.version>
@@ -348,7 +348,7 @@
 			<plugin>
 				<groupId>org.joinfaces</groupId>
 				<artifactId>joinfaces-maven-plugin</artifactId>
-				<version>${joinfaces.version}</version>
+				<version>5.2.0-m3</version>
 			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
