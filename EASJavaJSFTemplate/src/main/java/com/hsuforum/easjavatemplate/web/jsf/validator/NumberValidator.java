@@ -1,6 +1,6 @@
 package com.hsuforum.easjavatemplate.web.jsf.validator;
 
-import org.apache.commons.lang.math.NumberUtils;
+import org.apache.commons.lang3.math.NumberUtils;
 
 import jakarta.faces.application.FacesMessage;
 import jakarta.faces.component.UIComponent;
