@@ -14,7 +14,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<joinfaces.version>5.3.3</joinfaces.version>
 		<hsucommon.version>4.2.2</hsucommon.version>
-		<easscore.version>3.2.1</easscore.version>
+		<easscore.version>3.2.2</easscore.version>
 		<java.version>17</java.version>
 		<appRoot>/Application/EASJavaJSFTemplate</appRoot>
 		<systemUrl>https://localhost:10443</systemUrl>
