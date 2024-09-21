@@ -2,21 +2,22 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.hsuforum.EASJavaJSFTemplate</groupId>
 	<artifactId>EASJavaJSFTemplate</artifactId>
-	<version>3.2.1</version>
+	<version>3.2.2</version>
 	<packaging>jar</packaging>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.3.3</version>
+		<version>3.3.4</version>
 		<relativePath />
 	</parent>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<joinfaces.version>5.3.3</joinfaces.version>
-		<hsucommon.version>4.2.1</hsucommon.version>
-		<easscore.version>3.2.1</easscore.version>
+		<joinfaces.version>5.3.4</joinfaces.version>
+		<hsucommon.version>4.2.2</hsucommon.version>
+		<easscore.version>3.2.2</easscore.version>
 		<java.version>17</java.version>
 		<appRoot>/Application/EASJavaJSFTemplate</appRoot>
+		<spring.profiles.active>tomcat-mysql</spring.profiles.active>
 		<systemUrl>https://localhost:10443</systemUrl>
 		<ssoUrl>https://localhost:9443/cas</ssoUrl>
 		<portalWSURI>https://localhost:8443/EASPortal/rest</portalWSURI>
@@ -217,9 +218,8 @@
 			<artifactId>jcc</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.32</version>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
 		</dependency>
 		<dependency>
 		    <groupId>com.oracle.database.jdbc</groupId>
