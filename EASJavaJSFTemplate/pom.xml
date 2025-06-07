@@ -2,19 +2,19 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.hsuforum.EASJavaJSFTemplate</groupId>
 	<artifactId>EASJavaJSFTemplate</artifactId>
-	<version>3.3.1</version>
+	<version>3.4.0</version>
 	<packaging>jar</packaging>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.4.5</version>
+		<version>3.4.6</version>
 		<relativePath />
 	</parent>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<joinfaces.version>5.4.5</joinfaces.version>
-		<hsucommon.version>4.3.1</hsucommon.version>
-		<easscore.version>3.3.1</easscore.version>
+		<joinfaces.version>5.5.0</joinfaces.version>
+		<hsucommon.version>4.4.0</hsucommon.version>
+		<easscore.version>3.4.0</easscore.version>
 		<java.version>17</java.version>
 		<appRoot>/Application/EASJavaJSFTemplate</appRoot>
 		<spring.profiles.active>tomcat-mysql</spring.profiles.active>
