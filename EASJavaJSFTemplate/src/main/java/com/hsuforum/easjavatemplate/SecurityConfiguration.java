@@ -14,7 +14,6 @@ import org.springframework.security.web.access.intercept.FilterSecurityIntercept
 import org.springframework.security.web.authentication.AnonymousAuthenticationFilter;
 import org.springframework.security.web.authentication.logout.LogoutFilter;
 import org.springframework.security.web.context.SecurityContextPersistenceFilter;
-import org.springframework.security.web.servlet.util.matcher.MvcRequestMatcher;
 import org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter;
 import org.springframework.security.web.session.ConcurrentSessionFilter;
 import org.springframework.web.servlet.handler.HandlerMappingIntrospector;
@@ -63,48 +62,47 @@ public class SecurityConfiguration {
 	
 	@Bean
 	SecurityFilterChain securityFilterChain(HttpSecurity http, HandlerMappingIntrospector introspector) throws Exception {
-		MvcRequestMatcher.Builder mvcMatcherBuilder = new MvcRequestMatcher.Builder(introspector);
 		
 		http.authorizeHttpRequests((requests) -> {
 			try {
 				requests
-					.requestMatchers(mvcMatcherBuilder.pattern("/images/**")).permitAll()
-					.requestMatchers(mvcMatcherBuilder.pattern("/resources/**")).permitAll()
-					.requestMatchers(mvcMatcherBuilder.pattern("/img/**")).permitAll()
-					.requestMatchers(mvcMatcherBuilder.pattern("/*.html")).permitAll()
-					.requestMatchers(mvcMatcherBuilder.pattern("/*.xml")).permitAll()
-					.requestMatchers(mvcMatcherBuilder.pattern("/*.txt")).permitAll()
-					.requestMatchers(mvcMatcherBuilder.pattern("/login.jsf")).permitAll()
-					.requestMatchers(mvcMatcherBuilder.pattern("/jakarta.faces.resource/**")).permitAll()
-					.requestMatchers(mvcMatcherBuilder.pattern("/index.jspx")).permitAll()
-					.requestMatchers(mvcMatcherBuilder.pattern("/default.jsf")).permitAll()
-					.requestMatchers(mvcMatcherBuilder.pattern("/favicon.ico")).permitAll()
-					.requestMatchers(mvcMatcherBuilder.pattern("/error")).permitAll()
-					.requestMatchers(mvcMatcherBuilder.pattern("/exception/exception.jsf)")).permitAll()
-					.requestMatchers(mvcMatcherBuilder.pattern("/")).permitAll()
-					.and()
-					.csrf().disable()
-					.headers().frameOptions().disable()
-					.and()
-					.authorizeHttpRequests().anyRequest().authenticated()
-					.and()
-					.exceptionHandling()
-					.authenticationEntryPoint(casAuthenticationEntryPoint)
-					.and()
-					.addFilterBefore(concurrentSessionFilter, ConcurrentSessionFilter.class)
-					.addFilterBefore(securityContextPersistenceFilter, SecurityContextPersistenceFilter.class)
-					.addFilterBefore(casAuthenticationFilter, CasAuthenticationFilter.class)
-					.addFilterBefore(singleSignOutFilter, CasAuthenticationFilter.class)
-					.addFilterBefore(logoutFilter, LogoutFilter.class)
-					.addFilterBefore(securityContextHolderAwareRequestFilter, SecurityContextHolderAwareRequestFilter.class)
-					.addFilterBefore(anonymousProcessingFilter, AnonymousAuthenticationFilter.class)
-					.addFilterBefore(exceptionTranslationFilter, ExceptionTranslationFilter.class)
-					.addFilterBefore(filterSecurityInterceptor, FilterSecurityInterceptor.class);
+					.requestMatchers("/images/**").permitAll()
+					.requestMatchers("/resources/**").permitAll()
+					.requestMatchers("/img/**").permitAll()
+					.requestMatchers("/*.html").permitAll()
+					.requestMatchers("/*.xml").permitAll()
+					.requestMatchers("/*.txt").permitAll()
+					.requestMatchers("/login.jsf").permitAll()
+					.requestMatchers("/jakarta.faces.resource/**").permitAll()
+					.requestMatchers("/index.jspx").permitAll()
+					.requestMatchers("/default.jsf").permitAll()
+					.requestMatchers("/favicon.ico").permitAll()
+					.requestMatchers("/error").permitAll()
+					.requestMatchers("/exception/exception.jsf").permitAll()
+					.requestMatchers("/rest/**").permitAll()
+					.requestMatchers("/").permitAll()
+					.anyRequest().authenticated();
+					
 			} catch (Exception e) {
 
 				e.printStackTrace();
 			}
-		});
+		}).csrf(csrf -> csrf
+			.disable()
+		).headers(header -> header
+				.frameOptions( frameOption -> frameOption
+					.disable()
+			)
+		).exceptionHandling(exceptionHandling -> exceptionHandling.authenticationEntryPoint(casAuthenticationEntryPoint))
+		.addFilterBefore(concurrentSessionFilter, ConcurrentSessionFilter.class)
+		.addFilterBefore(securityContextPersistenceFilter, SecurityContextPersistenceFilter.class)
+		.addFilterBefore(casAuthenticationFilter, CasAuthenticationFilter.class)
+		.addFilterBefore(singleSignOutFilter, CasAuthenticationFilter.class)
+		.addFilterBefore(logoutFilter, LogoutFilter.class)
+		.addFilterBefore(securityContextHolderAwareRequestFilter, SecurityContextHolderAwareRequestFilter.class)
+		.addFilterBefore(anonymousProcessingFilter, AnonymousAuthenticationFilter.class)
+		.addFilterBefore(exceptionTranslationFilter, ExceptionTranslationFilter.class)
+		.addFilterBefore(filterSecurityInterceptor, FilterSecurityInterceptor.class);;
 		
 		return http.build();
 	}
