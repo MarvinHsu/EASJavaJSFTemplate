@@ -16,7 +16,7 @@ import org.springframework.security.access.SecurityConfig;
 import org.springframework.security.access.vote.AuthenticatedVoter;
 import org.springframework.security.web.FilterInvocation;
 import org.springframework.security.web.access.intercept.FilterInvocationSecurityMetadataSource;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+import org.springframework.security.web.servlet.util.matcher.PathPatternRequestMatcher;
 import org.springframework.security.web.util.matcher.RequestMatcher;
 
 import com.hsuforum.easjavatemplate.DefaultSetting;
@@ -56,7 +56,7 @@ public class PortalFilterInvocationDefinitionSource implements FilterInvocationS
 
 			FunctionItemWSVO funtionItemWSVO = groupFunctionWSVO.getFunctionItemWSVO();
 
-			RequestMatcher requestMatcher = new AntPathRequestMatcher(funtionItemWSVO.getUrl());
+			RequestMatcher requestMatcher = PathPatternRequestMatcher.withDefaults().matcher(funtionItemWSVO.getUrl());
 			requestMap.put(requestMatcher, definition);
 
 			if (logger.isDebugEnabled()) {
@@ -76,11 +76,11 @@ public class PortalFilterInvocationDefinitionSource implements FilterInvocationS
 		// add definition source /login.jsf=IS_AUTHENTICATED_ANONYMOUSLY
 		ArrayList<ConfigAttribute> ava = new ArrayList<ConfigAttribute>();
 		ava.add(new SecurityConfig(AuthenticatedVoter.IS_AUTHENTICATED_ANONYMOUSLY));
-		requestMap.put(new AntPathRequestMatcher("/login.jsf"), ava);
+		requestMap.put(PathPatternRequestMatcher.withDefaults().matcher("/login.jsf"), ava);
 		// add definition source /**=IS_AUTHENTICATED_FULLY
 		ArrayList<ConfigAttribute> aaf = new ArrayList<ConfigAttribute>();
 		ava.add(new SecurityConfig(AuthenticatedVoter.IS_AUTHENTICATED_FULLY));
-		requestMap.put(new AntPathRequestMatcher("/**/*.jsf"), aaf);
+		requestMap.put(PathPatternRequestMatcher.withDefaults().matcher("/**/*.jsf"), aaf);
 
 	}
 
