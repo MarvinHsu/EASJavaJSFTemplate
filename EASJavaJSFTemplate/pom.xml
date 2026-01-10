@@ -15,7 +15,9 @@
 		<joinfaces.version>6.0.1</joinfaces.version>
 		<hsucommon.version>5.0.1</hsucommon.version>
 		<easscore.version>4.0.1</easscore.version>
-		<java.version>17</java.version>
+		<maven.compiler.source>21</maven.compiler.source>
+		<maven.compiler.target>21</maven.compiler.target>
+		<maven.compiler.release>21</maven.compiler.release>
 		<appRoot>/Application/EASJavaJSFTemplate</appRoot>
 		<spring.profiles.active>tomcat-mysql</spring.profiles.active>
 		<systemUrl>https://localhost:10443</systemUrl>
@@ -286,10 +288,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>${java.version}</source>
-					<target>${java.version}</target>
-				</configuration>
 				<executions>
 					<execution>
 						<id>default-compile</id>
@@ -319,13 +317,12 @@
 			<plugin>
 				<groupId>dev.aspectj</groupId>
 				<artifactId>aspectj-maven-plugin</artifactId>
-				<version>1.13.1</version>
+				<version>1.14.1</version>
 				<configuration>
-					<complianceLevel>${java.version}</complianceLevel>
-					<source>${java.version}</source>
-					<target>${java.version}</target>
+					<complianceLevel>${maven.compiler.release}</complianceLevel>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
 					<forceAjcCompile>true</forceAjcCompile>
-					<complianceLevel>${java.version}</complianceLevel>
 					<sources />
 					<weaveDirectories>
 						<weaveDirectory>${project.build.directory}/classes</weaveDirectory>
@@ -334,11 +331,22 @@
 				<executions>
 					<execution>
 						<goals>
-							<goal>compile</goal>
-							<!--<goal>test-compile</goal>-->
+							<goal>compile</goal>						
 						</goals>
 					</execution>
 				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>org.aspectj</groupId>
+						<artifactId>aspectjtools</artifactId>
+						<version>1.9.25.1</version>
+					</dependency>
+					<dependency>
+						<groupId>org.aspectj</groupId>
+						<artifactId>aspectjweaver</artifactId>
+						<version>1.9.25.1</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 			<plugin>
 				<groupId>org.joinfaces</groupId>
