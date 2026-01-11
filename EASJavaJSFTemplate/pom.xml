@@ -378,7 +378,7 @@
 									<pluginExecutionFilter>
 										<groupId>dev.aspectj</groupId>
 										<artifactId>aspectj-maven-plugin</artifactId>
-										<versionRange>[1.13.1,)</versionRange>
+										<versionRange>[1.14.1,)</versionRange>
 										<goals>
 											<goal>test-compile</goal>
 											<goal>compile</goal>
