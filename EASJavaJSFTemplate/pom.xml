@@ -119,7 +119,7 @@
 		<dependency>
 			<groupId>org.apereo.cas.client</groupId>
 			<artifactId>cas-client-support-springboot</artifactId>
-			<version>4.0.5</version>
+			<version>4.1.0</version>
 		</dependency>
 		<!--
 		<dependency>
