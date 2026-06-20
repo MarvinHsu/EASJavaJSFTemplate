@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd 
+       http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/lang https://www.springframework.org/schema/lang/spring-lang.xsd            
+       http://www.springframework.org/schema/tx https://www.springframework.org/schema/tx/spring-tx.xsd
+       http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd ">
+
+	
+	<bean id="logoutUrl" class="java.lang.String">
+		<constructor-arg type="java.lang.String" value="@ssoUrl@/logout?service=@systemUrl@/EASPortal" />
+	</bean>
+	<!-- Portal WS Client -->
+	<bean id="portalClient" class="com.hsuforum.easjavatemplate.ws.client.PortalClient">
+		<property name="portalWSURI" value="@portalWSURI@" />
+	</bean>
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basenames">
+            <list>
+                <value>applicationResources</value>
+                <value>messages</value>
+                <value>org.springframework.security.messages</value>
+            </list>
+        </property>
+    </bean>
+    <!--  
+    <bean id="facadeMonitoringAdvisor"
+		class="net.bull.javamelody.MonitoringSpringAdvisor">
+		<property name="pointcut">
+			<bean
+				class="org.springframework.aop.support.JdkRegexpMethodPointcut">
+				<property name="patterns">
+					<list>
+						<value>com.hsuforum..*Service.find*</value>
+						<value>com.hsuforum..*Facade.find*</value>
+						<value>com.hsuforum..*Service.create*</value>
+						<value>com.hsuforum..*Facade.create*</value>
+						<value>com.hsuforum..*Service.update*</value>
+						<value>com.hsuforum..*Facade.update*</value>
+						<value>com.hsuforum..*Service.delete*</value>
+						<value>com.hsuforum..*Facade.delete*</value>
+					</list>
+				</property>
+			</bean>
+		</property>
+	</bean>
+    -->
+</beans>
