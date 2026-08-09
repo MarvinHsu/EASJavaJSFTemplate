@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.hsuforum</groupId>
 	<artifactId>EASJavaJSFTemplate</artifactId>
-	<version>4.1.0</version>
+	<version>4.1.1</version>
 	<packaging>jar</packaging>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
