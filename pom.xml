@@ -13,8 +13,8 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<joinfaces.version>6.1.0</joinfaces.version>
-		<hsucommon.version>5.1.0</hsucommon.version>
-		<easscore.version>4.1.0</easscore.version>
+		<hsucommon.version>5.1.1</hsucommon.version>
+		<easscore.version>4.1.1</easscore.version>
 		<maven.compiler.source>21</maven.compiler.source>
 		<maven.compiler.target>21</maven.compiler.target>
 		<maven.compiler.release>21</maven.compiler.release>
