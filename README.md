@@ -1,12 +1,12 @@
 # EASJavaJSFTemplate
 
-Enterprise Application Stack JSF Template (EASJavaJSFTemplate) is a Java 21 web application built on Spring Boot 4.1.0, JSF/PrimeFaces via JoinFaces, and Maven. The project is packaged as a JAR and uses Spring Security, Spring Data JPA, Quartz, and CAS-based authentication. The product introduction link is [https://www.hsuforum.com/default.jsf?tabParam=easPortalTab](https://www.hsuforum.com/default.jsf?tabParam=easPortalTab "Go to The product introduction").
+Enterprise Application Stack JSF Template (EASJavaJSFTemplate) is a Java 21 web application built on Spring Boot 4.1.1, JSF/PrimeFaces via JoinFaces, and Maven. The project is packaged as a JAR and uses Spring Security, Spring Data JPA, Quartz, and CAS-based authentication. The product introduction link is [https://www.hsuforum.com/default.jsf?tabParam=easPortalTab](https://www.hsuforum.com/default.jsf?tabParam=easPortalTab "Go to The product introduction").
 
 ## Current project facts
 
-- Java 21 and Spring Boot 4.1.0
-- JoinFaces 6.1.0 with PrimeFaces integration
-- HSUCommon 5.1.0 and EASSCore 4.1.0 as internal dependencies
+- Java 21 and Spring Boot 4.1.1
+- JoinFaces 6.1.1 with PrimeFaces integration
+- HSUCommon 5.1.1 and EASSCore 4.1.1 as internal dependencies
 - Database profiles: `tomcat-db2`, `tomcat-mysql`, `tomcat-oracle`, `tomcat-postgresql`, and `tomcat-sqlserver`
 - The default Maven profile is `tomcat-mysql`
 - The build includes native2ascii resource conversion, AspectJ weaving, and profile-based property filtering
